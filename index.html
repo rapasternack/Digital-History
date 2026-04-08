@@ -1,203 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Homepage</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irish-Indigenous Interactions</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.6;
-      color: #222;
-    }
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    /* HERO COVER */
-    .hero {
-      height: 100vh;
-      background: url('https://via.placeholder.com/1600x900') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
+<style>
+/* Base styles */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Roboto', sans-serif; line-height:1.6; color:#222; scroll-behavior:smooth; background:#f9f9f9; }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.4);
-    }
+/* NAVIGATION */
+nav {
+  position: fixed;
+  top:0; left:0; right:0;
+  background: rgba(255,255,255,0.95);
+  padding:1rem 2rem;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+  display:flex; justify-content:flex-end; gap:20px;
+  z-index:100;
+}
+nav a { text-decoration:none; font-weight:500; color:#222; transition:color 0.3s; }
+nav a:hover { color:#0072C6; }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-    }
+/* HERO SECTION */
+.hero {
+  height:100vh;
+  background:url('https://via.placeholder.com/1600x900') center/cover no-repeat;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center; color:white; position:relative;
+}
+.hero::after {
+  content:""; position:absolute; inset:0; background:rgba(0,0,0,0.4);
+}
+.hero-content { position:relative; z-index:2; max-width:900px; }
+.hero h1 { font-size:4rem; font-weight:700; margin-bottom:1rem; }
+.hero p { font-size:1.4rem; opacity:0.9; }
 
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-    }
+/* SECTION */
+.section { max-width:900px; margin: auto; padding:100px 20px; opacity:0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.section.visible { opacity:1; transform: translateY(0); }
+.section h2 { font-size:2.2rem; margin-bottom:20px; }
+.section p { font-size:1.15rem; margin-bottom:20px; line-height:1.8; }
 
-    .hero p {
-      font-size: 1.3rem;
-    }
+/* SIDECAR */
+.sidecar { display:flex; flex-wrap:wrap; min-height:80vh; margin:60px 0; }
+.sidecar-text {
+  width:40%; padding:80px; background:white; position:sticky; top:100px;
+  display:flex; flex-direction:column; justify-content:flex-start;
+}
+.sidecar-text h3 { font-size:1.8rem; margin-bottom:15px; }
+.sidecar-text p { font-size:1.1rem; line-height:1.7; }
+.sidecar-media { width:60%; background-size:cover; background-position:center; min-height:400px; }
 
-    /* NAV */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: white;
-      padding: 1rem 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 10;
-    }
+/* FULL IMAGE */
+.full-image { width:100%; height:500px; background-size:cover; background-position:center; margin:40px 0; }
 
-    nav a {
-      margin-right: 20px;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
+/* QUOTE BLOCK */
+.quote { font-size:1.6rem; font-style:italic; text-align:center; margin:80px auto; max-width:700px; }
 
-    /* SECTIONS */
-    .section {
-      padding: 80px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+/* MAP BLOCK */
+.map-block { margin:60px auto; max-width:900px; }
+.map-block iframe { width:100%; height:500px; border:none; }
 
-    .section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
+/* FOOTER */
+footer { background:#111; color:white; text-align:center; padding:50px; font-size:0.95rem; }
 
-    .section p {
-      font-size: 1.1rem;
-    }
-
-    /* IMAGE BLOCK */
-    .image-block {
-      width: 100%;
-      height: 500px;
-      background: url('https://via.placeholder.com/1200x600') center/cover no-repeat;
-      margin: 40px 0;
-    }
-
-    /* SPLIT LAYOUT (like sidecar) */
-    .split {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      margin: 60px 0;
-    }
-
-    .split img {
-      width: 50%;
-      min-width: 300px;
-    }
-
-    .split-text {
-      width: 50%;
-      padding: 20px;
-    }
-
-    /* FOOTER */
-    footer {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 40px 20px;
-    }
-
-    @media(max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      .split {
-        flex-direction: column;
-      }
-
-      .split img,
-      .split-text {
-        width: 100%;
-      }
-    }
-  </style>
+/* RESPONSIVE */
+@media(max-width:900px) {
+  .hero h1 { font-size:2.5rem; }
+  .sidecar { flex-direction:column; }
+  .sidecar-text, .sidecar-media { width:100%; padding:40px; min-height:300px; }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <a href="#intro">Introduction</a>
-    <a href="#story">Story</a>
-    <a href="#map">Map</a>
-  </nav>
+<!-- NAV -->
+<nav>
+  <a href="#intro">Introduction</a>
+  <a href="#context">Historical Context</a>
+  <a href="#map">Map</a>
+</nav>
 
-  <!-- HERO COVER -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Irish-Indigenous Interactions</h1>
-      <p>A digital exploration of historical connections between Ireland and Indigenous nations.</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Irish-Indigenous Interactions</h1>
+    <p>A digital exploration of historical connections between Ireland and Indigenous nations.</p>
+  </div>
+</section>
+
+<!-- INTRO SECTION -->
+<section id="intro" class="section">
+  <h2>Introduction</h2>
+  <p>In 1847, during the height of the Great Famine in Ireland, the Choctaw Nation, located in what is now Oklahoma, sent a remarkable donation to aid those suffering thousands of miles away. This gesture of solidarity, along with other moments of exchange, activism, and cultural connection between Irish and Indigenous peoples, reveals a shared history of resilience, empathy, and transatlantic relationships.</p>
+  <p>This digital project explores these interactions through maps, timelines, and stories, highlighting the people, events, and themes that shaped this chapter of history.</p>
+  <div class="full-image" style="background-image:url('https://via.placeholder.com/1200x600');"></div>
+</section>
+
+<!-- HISTORICAL CONTEXT -->
+<section id="context" class="section">
+  <h2>Historical Context</h2>
+  <p>The mid-19th century was a period of profound hardship and transformation on both sides of the Atlantic. In Ireland, the Great Famine (1845–1852) caused mass starvation, displacement, and social upheaval. Meanwhile, Indigenous nations in the United States were facing their own crises, including forced relocations and cultural disruption following policies like the Indian Removal Act.</p>
+  <p>Amid these challenges, a story of transatlantic solidarity emerges. In 1847, the Choctaw Nation, having recently endured the Trail of Tears, raised funds to support Irish famine relief. This act of generosity, along with other Irish-Indigenous interactions, reflects a broader history of shared resilience, empathy, and mutual recognition across continents.</p>
+  <p>Beyond aid, these interactions challenge common narratives of isolation between Indigenous communities and European populations, uncovering an interconnected history.</p>
+
+  <div class="sidecar">
+    <div class="sidecar-text">
+      <h3>Choctaw Donation</h3>
+      <p>This sticky panel stays in place while you scroll through the images highlighting key historical moments of Irish-Indigenous interactions.</p>
     </div>
-  </section>
+    <div class="sidecar-media" style="background-image:url('https://via.placeholder.com/800x600');"></div>
+  </div>
+</section>
 
-  <!-- INTRO SECTION -->
-  <section id="intro" class="section">
-    <h2>Introduction</h2>
-    <p>
-      In 1847, during the height of the Great Famine in Ireland, the Choctaw Nation, located in what is now Oklahoma, sent a remarkable donation to aid those suffering thousands of miles away. This gesture of solidarity, along with other moments of exchange, activism, and cultural connection between Irish and Indigenous peoples, reveals a shared history of resilience, empathy, and transatlantic relationships. This digital project explores these interactions through maps, timelines, and stories, highlighting the people, events, and themes that shaped this chapter of history.
-    </p>
-  </section>
+<!-- INTERACTIVE MAP -->
+<section id="map" class="section map-block">
+  <h2>Interactive Map</h2>
+  <iframe src="https://www.arcgis.com/apps/mapviewer/index.html?webmap=31bdf59a4a064e49916ab627e410fa43"></iframe>
+</section>
 
-  <!-- IMAGE BLOCK -->
-  <div class="image-block"></div>
+<!-- FOOTER -->
+<footer>
+  © 2026 Rachel Pasternack | Irish-Indigenous Interactions Digital Project
+</footer>
 
-  <!-- STORY SECTION -->
-  <section id="story" class="section">
-    <h2>Main Story Section</h2>
-    <p>
-      Use scroll-based storytelling to guide users through your content.
-      Combine narrative with images, maps, and media.
-    </p>
+<script>
+// Scroll-triggered reveal for sections
+const sections = document.querySelectorAll('.section');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) { entry.target.classList.add('visible'); }
+  });
+}, { threshold: 0.2 });
 
-    <div class="split">
-      <img src="https://via.placeholder.com/600x400">
-      <div class="split-text">
-        <h3>Sidecar Style Layout</h3>
-        <p>
-          This mimics the "sidecar" block where text and media appear side-by-side.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- MAP SECTION -->
-  <section id="map" class="section">
-    <h2>Interactive Map</h2>
-    <p>Embed a map or iframe here:</p>
-
-    <iframe 
-      src="https://www.openstreetmap.org/export/embed.html"
-      width="100%" 
-      height="400"
-      style="border:0;">
-    </iframe>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2026 Rachel Pasternack | Digital History Project</p>
-  </footer>
+sections.forEach(section => observer.observe(section));
+</script>
 
 </body>
 </html>
