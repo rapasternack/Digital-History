@@ -2,18 +2,202 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <title>Homepage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redlining and Urban Space</title>
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+      color: #222;
+    }
+
+    /* HERO COVER */
+    .hero {
+      height: 100vh;
+      background: url('https://via.placeholder.com/1600x900') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 10;
+    }
+
+    nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 80px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      font-size: 1.1rem;
+    }
+
+    /* IMAGE BLOCK */
+    .image-block {
+      width: 100%;
+      height: 500px;
+      background: url('https://via.placeholder.com/1200x600') center/cover no-repeat;
+      margin: 40px 0;
+    }
+
+    /* SPLIT LAYOUT (like sidecar) */
+    .split {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 60px 0;
+    }
+
+    .split img {
+      width: 50%;
+      min-width: 300px;
+    }
+
+    .split-text {
+      width: 50%;
+      padding: 20px;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .split {
+        flex-direction: column;
+      }
+
+      .split img,
+      .split-text {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Redlining and Urban Space</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="planning.html">Planning</a>
-      <a href="findings.html">Findings</a>
-      <a href="sustainability.html">Sustainability</a>
-    </nav>
-  </header>
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="#intro">Introduction</a>
+    <a href="#story">Story</a>
+    <a href="#map">Map</a>
+  </nav>
+
+  <!-- HERO COVER -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Your Story Title</h1>
+      <p>A compelling subtitle or description goes here</p>
+    </div>
+  </section>
+
+  <!-- INTRO SECTION -->
+  <section id="intro" class="section">
+    <h2>Introduction</h2>
+    <p>
+      This is where your narrative begins. Introduce the topic, set the stage, and engage your audience with compelling storytelling.
+    </p>
+  </section>
+
+  <!-- IMAGE BLOCK -->
+  <div class="image-block"></div>
+
+  <!-- STORY SECTION -->
+  <section id="story" class="section">
+    <h2>Main Story Section</h2>
+    <p>
+      Use scroll-based storytelling to guide users through your content.
+      Combine narrative with images, maps, and media.
+    </p>
+
+    <div class="split">
+      <img src="https://via.placeholder.com/600x400">
+      <div class="split-text">
+        <h3>Sidecar Style Layout</h3>
+        <p>
+          This mimics the "sidecar" block where text and media appear side-by-side.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section id="map" class="section">
+    <h2>Interactive Map</h2>
+    <p>Embed a map or iframe here:</p>
+
+    <iframe 
+      src="https://www.openstreetmap.org/export/embed.html"
+      width="100%" 
+      height="400"
+      style="border:0;">
+    </iframe>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Rachel Pasternack | Digital History Project</p>
+  </footer>
+
+</body>
+</html>
