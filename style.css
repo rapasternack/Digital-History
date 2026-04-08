@@ -8,7 +8,7 @@ body {
   line-height: 1.7;
   margin: 0;
   color: #1f1f1f;
-  background: #f7f4ed;
+  background: #c29630;
 }
 
 header, main, footer {
@@ -18,7 +18,7 @@ header, main, footer {
 }
 
 header {
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #9e2020;
   margin-bottom: 1rem;
 }
 
