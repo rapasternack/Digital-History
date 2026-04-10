@@ -18,7 +18,7 @@ header, main, footer {
 }
 
 header {
-  border-bottom: 1px solid #c2a200;
+  border-bottom: 1px solid #125c00;
   margin-bottom: 1rem;
 }
 
@@ -84,11 +84,11 @@ ul, ol {
 }
 
 footer {
-  border-top: 1px solid #b19900;
+  border-top: 1px solid #005c00;
   margin-top: 2rem;
   font-family: sans-serif;
   font-size: 0.85rem;
-  color: #666;
+  color: #fffdfd;
 }
 
 footer a {
