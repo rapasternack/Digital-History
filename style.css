@@ -132,3 +132,13 @@ footer {
   background: black;
   color: white;
 }
+
+/* PLANNING LISTS */
+.planning-list {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.planning-list li {
+  margin-bottom: 10px;
+}

@@ -1,75 +1,116 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
+  <title>Planning | Irish–Indigenous Interactions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Irish-Indigenous Internactions</title>
+
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <header>
-    <h1>Irish-Indigenous Internactions</h1>
-    <nav>
+<!-- NAV -->
+<nav>
+  <div class="nav-container">
+    <h1 class="logo">Irish–Indigenous Interactions</h1>
+    <div class="nav-links">
       <a href="index.html">Home</a>
-      <a href="planning.html" class="active">Planning</a>
-      <a href="findings.html">Findings</a>
+      <a href="planning.html">Planning</a>
+      <a href="analysis.html">Findings</a>
       <a href="sustainability.html">Sustainability</a>
-    </nav>
-  </header>
+    </div>
+  </div>
+</nav>
 
-  <main>
-    <section>
-      <!-- DEMO NOTE: This section shows the sketches for this specific four-page project.
-           Your site may have a different number of pages or a different structure.
-           Sketch whatever pages your design requires — there is no required number.
-           What matters is that each sketch documents what the page reveals and
-           what it guides the visitor to do. -->
-      <h2>Interface Sketches</h2>
-      <p>Before building any pages, I drew schematic sketches of each page on paper. The goal was to decide, for each page, two things: what the page should <em>reveal</em> to a visitor, and what it should <em>guide</em> them to do. Using low-fidelity sketches allowed me to focus on <strong>information hierarchy</strong> and user flow without being distracted by CSS styling or typography early on.</p>
+<!-- HERO -->
+<header class="sub-hero">
+  <h1>Planning</h1>
+  <p>Research design, methodology, and project development</p>
+</header>
 
-      <div class="sketch-grid">
-        <figure>
-          <img src="assets/sketch-home.jpg" alt="Hand-drawn interface sketch of the home page showing a header with navigation, a project title and overview paragraph, and a research question section below">
-          <figcaption><strong>sketch-home.jpg</strong>: The opening paragraph faces outward. Navigation is pinned to the top to ensure global reachability.</figcaption>
-        </figure>
+<!-- OVERVIEW -->
+<section class="section light">
+  <div class="container">
+    <h2>Project Overview</h2>
+    <p>
+      This digital history project explores the historical and contemporary connections between Ireland and Indigenous nations, with a particular focus on the 1847 Choctaw donation during the Great Irish Famine. While this moment serves as an entry point, the project expands outward to examine broader themes of colonialism, migration, and memory.
+    </p>
+  </div>
+</section>
 
-        <figure>
-          <img src="assets/sketch-findings.jpg" alt="Hand-drawn interface sketch of the findings page showing a map image in the upper section with a caption below and an interpretive paragraph beneath that">
-          <figcaption><strong>sketch-findings.jpg</strong>: The primary source leads. By placing the map first, the visitor is forced to look at the data before reading the interpretation.</figcaption>
-        </figure>
+<!-- RESEARCH QUESTIONS -->
+<section class="section dark">
+  <div class="container">
+    <h2>Research Questions</h2>
 
-        <figure>
-          <img src="assets/sketch-sustainability.jpg" alt="Hand-drawn interface sketch of the sustainability page showing a simple list layout with sections for platform, essential files, and future use notes">
-          <figcaption><strong>sketch-sustainability.jpg</strong>: A functional blueprint. This layout prioritizes scannability for future researchers over narrative persuasion.</figcaption>
-        </figure>
-      </div>
-    </section>
+    <ul class="planning-list">
+      <li>How did the Choctaw donation of 1847 shape Irish–Indigenous relationships?</li>
+      <li>In what ways do Irish and Indigenous histories intersect through colonialism and displacement?</li>
+      <li>How have these interactions been remembered and commemorated over time?</li>
+      <li>How can digital tools help visualize and interpret these connections?</li>
+    </ul>
+  </div>
+</section>
 
-    <section>
-      <!-- DEMO NOTE: The "Reveal vs. Guide" framework is one way to document design decisions.
-           Your planning page should explain the reasoning behind your own choices,
-           whatever framework or vocabulary makes sense for your project. -->
-      <h2>Design Decisions: The "Reveal vs. Guide" Framework</h2>
+<!-- METHODS -->
+<section class="section light">
+  <div class="container">
+    <h2>Methodology</h2>
 
-      <p><strong>Intended visitor:</strong> A general public reader with no specialist background in urban history or redlining — curious, literate, unfamiliar with HOLC grading as a concept. Not a researcher; not a student in this course. Someone who might follow a link from a local history blog or a civic data project.</p>
+    <h3>Digital Mapping</h3>
+    <p>
+      ArcGIS StoryMaps was used to visualize geographic connections between Ireland and Indigenous nations. Mapping allowed for spatial analysis of migration routes, sites of displacement, and locations of commemoration.
+    </p>
 
-      <h3>1. Home Page: Context Before Question</h3>
-      <p><strong>Reveals:</strong> The historical context of HOLC grading and the specific geographic scope of this study.</p>
-      <p><strong>Guides:</strong> The visitor is guided to understand the <em>why</em> before the <em>what</em>. By placing the formal research question after the overview, the layout ensures that the visitor has the necessary historical vocabulary to understand the question's significance. This order is calibrated for the intended visitor — a general reader who needs the context before the technical question makes sense.</p>
+    <h3>Timeline Construction</h3>
+    <p>
+      A chronological timeline was developed to situate key events within broader historical contexts, connecting Indigenous removal, the Irish famine, and later acts of remembrance.
+    </p>
 
-      <h3>2. Findings Page: Primary Source Before Argument</h3>
-      <p><strong>Reveals:</strong> The central spatial argument — the visual correlation between 1930s grades and 2020 income levels.</p>
-      <p><strong>Guides:</strong> The design guides the visitor to perform their own visual analysis of the map before encountering the written argument. For a general reader unfamiliar with redlining, seeing the map first creates an open question; the interpretive text then answers it. This sequence would be less important for a specialist who already knows the argument.</p>
+    <h3>Primary Source Analysis</h3>
+    <p>
+      The project incorporates newspapers, historical accounts, and government documents to provide insight into contemporary understandings of these events.
+    </p>
 
-      <h3>3. Sustainability Page: Documentation as Design</h3>
-      <p><strong>Reveals:</strong> The technical structure of the site, including file dependencies and data sources.</p>
-      <p><strong>Guides:</strong> Unlike the other pages, this does not guide the intended visitor — it guides a different user entirely: a future researcher, archivist, or maintainer. The shift to a simple, unadorned list format signals that the site has changed audience and purpose.
-    </p></section>
-  </main>
+  </div>
+</section>
 
-  <footer>
-    <p>HIST 501D Digital History &nbsp;|&nbsp; Binghamton University &nbsp;|&nbsp; Spring 2026 &nbsp;|&nbsp; <a href="https://github.com/rapasternack/Digital-History">Repository</a></p>
-  </footer>
+<!-- DESIGN PROCESS -->
+<section class="section dark">
+  <div class="container">
+    <h2>Design & Structure</h2>
 
+    <p>
+      The website was designed to function as a digital exhibit, guiding users through a narrative experience. The homepage introduces the topic, while the findings section integrates timeline, map, and archival materials to support interpretation.
+    </p>
 
+    <p>
+      A clean, minimalist design was chosen to prioritize readability and accessibility, while maintaining a professional and museum-like aesthetic.
+    </p>
 
-</body></html>
+  </div>
+</section>
+
+<!-- CHALLENGES -->
+<section class="section light">
+  <div class="container">
+    <h2>Challenges & Limitations</h2>
+
+    <ul class="planning-list">
+      <li>Balancing narrative storytelling with analytical depth</li>
+      <li>Representing complex colonial relationships without oversimplification</li>
+      <li>Locating accessible and reliable primary sources</li>
+      <li>Integrating digital tools (ArcGIS, HTML) into a cohesive experience</li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Rachel Pasternack | Digital History Project | Spring 2026</p>
+</footer>
+
+</body>
+</html>
