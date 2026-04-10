@@ -1,0 +1,81 @@
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sustainability — Redlining and Urban Space</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Redlining and Urban Space</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="planning.html">Planning</a>
+      <a href="findings.html">Findings</a>
+      <a href="sustainability.html">Sustainability</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Platform and Structure</h2>
+      <p>This site is a static HTML site hosted on GitHub Pages. It uses no content management system, no server-side processing, and no external JavaScript frameworks. All pages are plain HTML files linked to a single stylesheet. This structure was chosen because it is transparent, lightweight, and does not depend on any third-party platform remaining functional.</p>
+      <p>Static sites are well suited to preservation. The files are human-readable, browser-renderable without any build step, and do not depend on a database or a running application. The same files that are in the repository are the files that produce the site.</p>
+    </section>
+
+    <section>
+      <h2>Essential Files</h2>
+      <p>The following files are required for the site to function:</p>
+      <ul>
+        <li><code>index.html</code> — home page</li>
+        <li><code>planning.html</code> — interface sketches and design documentation</li>
+        <li><code>findings.html</code> — central artifact and interpretation</li>
+        <li><code>sustainability.html</code> — this page</li>
+        <li><code>style.css</code> — all visual styling</li>
+        <li><code>assets/holc-map.png</code> — the map artifact displayed on the findings page</li>
+        <li><code>assets/sketch-home.jpg</code>, <code>sketch-findings.jpg</code>, <code>sketch-sustainability.jpg</code> — interface sketch photos displayed on the planning page</li>
+      </ul>
+      <p>If the <code>assets/</code> folder or any of its contents are missing, images will fail to load but the text of the site will remain intact.</p>
+    </section>
+
+    <section>
+      <h2>Data and Dependencies</h2>
+      <p>The map on the findings page was produced from two external datasets:</p>
+      <ul>
+        <li>HOLC boundary data: <a href="https://dsl.richmond.edu/panorama/redlining/">Mapping Inequality</a>, University of Richmond Digital Scholarship Lab. Downloaded as a GeoJSON file in February 2026. The data is openly licensed and redistributable.</li>
+        <li>Census income data: U.S. Census Bureau American Community Survey 5-Year Estimates (2020), retrieved via the Census API. The retrieval script is in the project repository.</li>
+      </ul>
+      <p>The Python script used to produce the map is in the repository at <code>scripts/make-holc-map.py</code>. The script requires GeoPandas, Matplotlib, and the Census API key stored as an environment variable. The map is static — it does not call any live API when the page loads.</p>
+      <p>There are no other external dependencies. The CSS is self-contained. No CDN resources are loaded.</p>
+    </section>
+
+    <section>
+      <h2>Maintaining and Extending the Site</h2>
+      <p>To update or extend this site after the course ends, a future user would need:</p>
+      <ol>
+        <li>A GitHub account with access to the repository</li>
+        <li>Basic familiarity with HTML and CSS to edit page content</li>
+        <li>Python with GeoPandas and Matplotlib to reproduce or update the map</li>
+        <li>A Census API key to re-run the data retrieval script</li>
+      </ol>
+      <p>No other tools, accounts, or software are required. The site can be cloned, edited locally, and pushed back to GitHub Pages without any build process. If GitHub Pages becomes unavailable, the files can be hosted on any static file server without modification.</p>
+    </section>
+
+    <section>
+      <h2>Credits</h2>
+      <ul>
+        <li>HOLC boundary data: Mapping Inequality, University of Richmond Digital Scholarship Lab</li>
+        <li>Census data: U.S. Census Bureau, American Community Survey</li>
+        <li>Course: HIST 501D Digital History, Binghamton University, Spring 2026</li>
+        <li>Repository: <a href="https://github.com/bds134/dh-demo/tree/main/demo-site">github.com/bds134/dh-demo</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>HIST 501D Digital History &nbsp;|&nbsp; Binghamton University &nbsp;|&nbsp; Spring 2026 &nbsp;|&nbsp; <a href="https://github.com/bds134/dh-demo/tree/main/demo-site">Repository</a></p>
+  </footer>
+
+
+
+</body></html>
