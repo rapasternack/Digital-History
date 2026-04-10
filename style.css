@@ -7,8 +7,8 @@ body {
   font-family: Georgia, serif;
   line-height: 1.7;
   margin: 0;
-  color: #1f1f1f;
-  background: #c29630;
+  color: #ffffff;
+  background: #00601b;
 }
 
 header, main, footer {
@@ -18,7 +18,7 @@ header, main, footer {
 }
 
 header {
-  border-bottom: 1px solid #9e2020;
+  border-bottom: 1px solid #c2a200;
   margin-bottom: 1rem;
 }
 
@@ -34,7 +34,7 @@ nav {
 
 nav a {
   margin-right: 1.25rem;
-  color: #2a4a7f;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -67,7 +67,7 @@ figure img {
 figcaption {
   font-family: sans-serif;
   font-size: 0.88rem;
-  color: #555;
+  color: #ffffff;
   margin-top: 0.4rem;
 }
 
@@ -84,7 +84,7 @@ ul, ol {
 }
 
 footer {
-  border-top: 1px solid #ccc;
+  border-top: 1px solid #b19900;
   margin-top: 2rem;
   font-family: sans-serif;
   font-size: 0.85rem;
@@ -92,7 +92,7 @@ footer {
 }
 
 footer a {
-  color: #2a4a7f;
+  color: #ffffff;
 }
 
 /* -----------------------------------------------
