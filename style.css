@@ -52,8 +52,8 @@ nav {
 
 /* HERO */
 .hero {
-  height: 100vh;
-  background: url('https://upload.wikimedia.org/wikipedia/commons/7/78/Kindred_Spirits_Sculpture.jpg') center/cover no-repeat;
+  height: 90vh;
+  background: url('images/irish-indigenous.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
