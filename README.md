@@ -1,3 +1,10 @@
+# TESTER QUESTIONS
+1. Can you easily move between pages without getting lost or needing to use a back button?
+2. Do you understand the relationship between Irish and Indigenous histories after reading the homepage and findings sections? Is the narrative unclear or too complex?
+3. Are text, images, and the layout readable and balanced (check for multiple screen sizes!)?
+4. Do all images load and scale correctly, and include their alt text?
+5. Does the site guide you toward exploring more such as Findings and/or Sustainability?
+
 # Irish-Indigenous Interactions
 
 **An interactive digital history project exploring connections between Irish and Indigenous nations, with a focus on memory, mapping, and archives. This project uses digital tools such as mapping and archival curation, to explore transnational histories of solidarity and reframe how Indigenous and Irish histories intersect across space and time.**
