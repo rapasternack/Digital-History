@@ -9,7 +9,7 @@ https://rapasternack.github.io/Digital-History/
 
 - **index.html** – Homepage introducing the project and its core themes.
 - **planning.html** – Outlines research goals, design decisions, and project development process.
-- **analysis.html** – Central findings page containing historical findings, interpretation, and thematic sections. Contiains a a chronological visualization of key events (e.g., Irish Famine, Choctaw aid, commemorations) in a timeline, an interactive, embedded map visualizing geographic connections between Ireland and Indigenous nations and a curated collection of primary sources, documents, and external links.
+- **analysis.html** – Central findings page containing historical findings, interpretation, and thematic sections. Contiains a a chronological visualization of key events (Irish Famine, Choctaw aid, commemorations) in a timeline, an interactive, embedded map visualizing geographic connections between Ireland and Indigenous nations and a curated collection of primary sources, documents, and external links.
 - **sustainability.html** – Discusses platform choices, long-term accessibility, and digital preservation considerations.
 - **style.css** – Main stylesheet controlling layout, typography, and visual design across the site.
 
@@ -27,9 +27,7 @@ This project draws from a combination of primary and secondary sources, includin
 
 ## How To View the Project Locally
 
-1. Download or clone the repository:
-  ```bash
-   git clone https://github.com/rapasternack/Digital-History.git
+1. Download or clone the repository
 2. Open the project folder
 3. Open index.html in your local web browser or server
 
