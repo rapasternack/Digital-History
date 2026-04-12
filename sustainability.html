@@ -2,125 +2,148 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sustainability | Irish–Indigenous Interactions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Sustainability | Irish–Indigenous Interactions</title>
+
   <link rel="stylesheet" href="style.css">
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
+<!-- NAVIGATION -->
+<nav aria-label="Main navigation">
   <div class="nav-container">
     <h1 class="logo">Irish–Indigenous Interactions</h1>
+
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="planning.html">Planning</a>
-      <a href="analysis.html">Findings</a>
-      <a href="sustainability.html">Sustainability</a>
+      <a href="findings.html">Findings</a>
+      <a href="sustainability.html" aria-current="page">Sustainability</a>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
 <header class="sub-hero">
-  <h1>Sustainability</h1>
-  <p>Technical documentation, platform choices, and project maintenance</p>
+  <div class="container">
+    <h1>Sustainability</h1>
+    <p>
+      Technical documentation, platform decisions, and long-term maintenance of the project
+    </p>
+  </div>
 </header>
 
+<main>
+
 <!-- PLATFORM CHOICES -->
-<section class="section light">
+<section class="section">
   <div class="container">
+
     <h2>Platform Choices</h2>
+
+    <p>
+      This project uses lightweight, widely supported technologies to ensure long-term accessibility and ease of maintenance.
+    </p>
 
     <ul class="planning-list">
       <li><strong>HTML5</strong> – Provides the structural framework for all pages</li>
       <li><strong>CSS3</strong> – Controls layout, typography, and visual design</li>
       <li><strong>GitHub Pages</strong> – Static hosting for long-term public access</li>
-      <li><strong>ArcGIS Online</strong> – Used for interactive mapping and spatial visualization</li>
-      <li><strong>Google Fonts</strong> – Ensures consistent typography across devices</li>
+      <li><strong>ArcGIS Online</strong> – Interactive mapping and spatial visualization</li>
+      <li><strong>Google Fonts</strong> – Consistent cross-device typography</li>
     </ul>
 
   </div>
 </section>
 
 <!-- ESSENTIAL FILES -->
-<section class="section dark">
+<section class="section section-alt">
   <div class="container">
+
     <h2>Essential Project Files</h2>
 
     <p>
-      The website is structured using a small set of core files. These files must remain organized together for the project to function correctly.
+      The site is built from a small set of interconnected files. Keeping this structure intact ensures the project remains functional and portable.
     </p>
 
     <ul class="planning-list">
       <li><strong>index.html</strong> – Homepage introducing the project</li>
-      <li><strong>findings.html</strong> – Timeline, map, and archival content</li>
-      <li><strong>planning.html</strong> – Research design and development process</li>
-      <li><strong>sustainability.html</strong> – Technical documentation and maintenance notes</li>
-      <li><strong>style.css</strong> – Styling for all pages</li>
-      <li><strong>assets/</strong> – Folder for images and media</li>
+      <li><strong>findings.html</strong> – Timeline, map, and archival materials</li>
+      <li><strong>planning.html</strong> – Research design and methodology</li>
+      <li><strong>sustainability.html</strong> – Technical documentation and maintenance</li>
+      <li><strong>style.css</strong> – Global styling rules</li>
+      <li><strong>assets/</strong> – Images and media files</li>
     </ul>
 
   </div>
 </section>
 
-<!-- FUTURE USER REQUIREMENTS -->
-<section class="section light">
+<!-- FUTURE MAINTENANCE -->
+<section class="section">
   <div class="container">
+
     <h2>What a Future User Would Need</h2>
 
     <p>
-      A future maintainer or researcher should have access to the following in order to update or preserve this project:
+      A future maintainer should be able to update or migrate this project without breaking structure or content.
     </p>
 
     <ul class="planning-list">
-      <li>Basic understanding of HTML and CSS</li>
-      <li>Access to the GitHub repository hosting the project</li>
-      <li>ArcGIS account (only if updating or replacing the interactive map)</li>
-      <li>Image source URLs or local image files if external links break</li>
-      <li>Awareness of page structure so links between sections remain intact</li>
+      <li>Basic knowledge of HTML and CSS</li>
+      <li>Access to the GitHub repository</li>
+      <li>ArcGIS account (only for map updates)</li>
+      <li>Local copies of images or verified external URLs</li>
+      <li>Understanding of navigation structure across pages</li>
     </ul>
 
   </div>
 </section>
 
-<!-- MAINTENANCE NOTES -->
-<section class="section dark">
+<!-- MAINTENANCE -->
+<section class="section section-alt">
   <div class="container">
+
     <h2>Maintenance Notes</h2>
 
     <ul class="planning-list">
-      <li>Ensure all external image links remain active or are replaced with local files if necessary</li>
-      <li>Check ArcGIS embeds periodically for access or permission issues</li>
-      <li>Update bibliography and archive links if sources move or change</li>
-      <li>Maintain consistent navigation structure across all pages</li>
+      <li>Check external links periodically for stability</li>
+      <li>Update or replace broken image sources</li>
+      <li>Verify ArcGIS embeds for access changes</li>
+      <li>Maintain consistent navigation across all pages</li>
     </ul>
 
   </div>
 </section>
 
-<!-- CREDIT AND SOURCES -->
- <section class="section dark">
+<!-- SOURCES -->
+<section class="section">
   <div class="container">
-    <h2>Credit and Sources</h2>
+
+    <h2>Credits and Sources</h2>
+
     <p>
-      Credit, Sources, and Bibliography will go here.
+      This section will include archival sources, scholarly references, and digital collections used throughout the project.
     </p>
 
   </div>
 </section>
 
+</main>
+
 <!-- FOOTER -->
 <footer>
-  <p>
-    Rachel Pasternack | Digital History Project | Spring 2026 |
-    <a href="https://github.com/rapasternack/Digital-History" target="_blank">
-      View Repository
-    </a>
-  </p>
+  <div class="container">
+    <p>
+      Rachel Pasternack | Digital History Project | Spring 2026 |
+      <a href="https://github.com/rapasternack/Digital-History" target="_blank" rel="noopener">
+        View Repository
+      </a>
+    </p>
+  </div>
 </footer>
 
 </body>
