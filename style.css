@@ -207,19 +207,6 @@ nav {
   transition: all 0.3s ease;
 }
 
-/* timeline dot */
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  left: -11px;
-  top: 6px;
-  width: 18px;
-  height: 18px;
-  background: #c2a878;
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(194,168,120,0.6);
-}
-
 /* hover = spotlight effect */
 .timeline-item:hover {
   transform: translateX(6px);
