@@ -310,3 +310,8 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
