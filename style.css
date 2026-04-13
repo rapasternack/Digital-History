@@ -307,13 +307,8 @@ footer {
 }
 
 img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-}
-
-.container {
-  max-width: 4000px;
-  margin: 0 auto;
 }
 
 .sketch-placeholder img {
