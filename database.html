@@ -39,8 +39,8 @@
   </div>
 </section>
 
-<!-- ARCHIVE -->
-<section id="archive" class="section light">
+<!-- DATABASE -->
+<section id="database" class="section light">
   <div class="container">
     <h2>Primary Source Database</h2>
     <p>
@@ -51,6 +51,106 @@
 </section>
 
 </main>
+
+<section class="section light">
+  <div class="container">
+    <h2>Explore the Database</h2>
+
+    <!-- SEARCH + FILTER -->
+    <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2rem;">
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Search events..." 
+        style="padding:0.75rem; flex:1; min-width:200px;"
+      >
+
+      <select id="filterType" style="padding:0.75rem;">
+        <option value="">All Interaction Types</option>
+      </select>
+    </div>
+
+    <!-- CARD GRID -->
+    <div id="cardContainer" class="grid"></div>
+  </div>
+</section>
+
+<script>
+let allData = [];
+
+fetch('Digital History Spreadsheet.csv')
+  .then(res => res.text())
+  .then(text => {
+    const rows = text.split('\n').map(r => r.split(','));
+    const headers = rows[0];
+
+    allData = rows.slice(1).map(row => {
+      let obj = {};
+      headers.forEach((h, i) => obj[h.trim()] = row[i]);
+      return obj;
+    });
+
+    populateFilter();
+    renderCards(allData);
+  });
+
+function populateFilter() {
+  const select = document.getElementById('filterType');
+  const types = [...new Set(allData.map(d => d.interaction_type))];
+
+  types.forEach(type => {
+    if (!type) return;
+    const option = document.createElement('option');
+    option.value = type;
+    option.textContent = type;
+    select.appendChild(option);
+  });
+}
+
+function renderCards(data) {
+  const container = document.getElementById('cardContainer');
+  container.innerHTML = '';
+
+  data.forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    card.innerHTML = `
+      <h3>${item.title || 'Untitled Event'}</h3>
+      <p><strong>Date:</strong> ${item.start_date || ''}</p>
+      <p><strong>Type:</strong> ${item.interaction_type || ''}</p>
+      <p>${item.description || ''}</p>
+      <p><em>${item.place || ''}</em></p>
+    `;
+
+    container.appendChild(card);
+  });
+}
+
+function applyFilters() {
+  const search = document.getElementById('searchInput').value.toLowerCase();
+  const filter = document.getElementById('filterType').value;
+
+  const filtered = allData.filter(item => {
+    const text = `
+      ${item.title} 
+      ${item.description} 
+      ${item.people} 
+      ${item.place}
+    `.toLowerCase();
+
+    const matchesSearch = text.includes(search);
+    const matchesFilter = !filter || item.interaction_type === filter;
+
+    return matchesSearch && matchesFilter;
+  });
+
+  renderCards(filtered);
+}
+
+document.getElementById('searchInput').addEventListener('input', applyFilters);
+document.getElementById('filterType').addEventListener('change', applyFilters);
+</script>
 
 <!-- FOOTER -->
 <footer>

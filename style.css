@@ -128,7 +128,7 @@ nav {
   background: white;
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(129, 130, 123, 0.925);
+  box-shadow: 0 4px 12px rgba(99, 99, 97, 0.925);
   transition: 0.3s;
 }
 
@@ -137,7 +137,7 @@ nav {
 }
 
 .dark .card {
-  background: #75756a;
+  background: #63635d;
 }
 
 /* FOOTER */
@@ -337,3 +337,21 @@ a:link { color: rgb(246, 245, 245); }     /* Unvisited */
 a:visited { color: rgb(247, 244, 244); }  /* Visited */
 a:hover { color: rgb(247, 242, 242); }     /* Mouse over */
 a:active { color: rgb(244, 242, 242); }     /* Clicked */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
