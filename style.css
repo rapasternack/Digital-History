@@ -128,7 +128,7 @@ nav {
   background: white;
   padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(143, 159, 39, 0.925);
   transition: 0.3s;
 }
 
@@ -137,7 +137,7 @@ nav {
 }
 
 .dark .card {
-  background: #1c1c1c;
+  background: #aaad09;
 }
 
 /* FOOTER */
