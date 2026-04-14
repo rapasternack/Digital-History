@@ -331,3 +331,9 @@ img {
   width: 250px;
   height: auto;
 }
+
+/* Order matters: Link, Visited, Hover, Active */
+a:link { color: rgb(246, 245, 245); }     /* Unvisited */
+a:visited { color: rgb(247, 244, 244); }  /* Visited */
+a:hover { color: rgb(247, 242, 242); }     /* Mouse over */
+a:active { color: red; }     /* Clicked */
