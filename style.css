@@ -364,3 +364,8 @@ a:active { color: rgb(244, 242, 242); }     /* Clicked */
   color: #555;
   margin-top: 5px;
 }
+
+/* PADDING */
+.overview {
+  margin-top: 60px;
+}
