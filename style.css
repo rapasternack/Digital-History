@@ -182,6 +182,18 @@ nav {
   backdrop-filter: blur(6px);
 }
 
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* THIS is the key fix */
+body {
+  padding-top: 100px;
+}
+
 .logo {
   font-size: 1.3rem;
   color: #f4f1ea;
@@ -366,6 +378,18 @@ a:active { color: rgb(244, 242, 242); }     /* Clicked */
 }
 
 /* PADDING */
-.overview {
-  margin-top: 60px;
+/* gives breathing room under navbar across ALL pages */
+body {
+  padding-top: 80px;
+}
+
+/* keeps section spacing consistent */
+.section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+/* prevents headers from adding extra weird spacing */
+.section h2 {
+  margin-top: 0;
 }
