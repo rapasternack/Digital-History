@@ -277,8 +277,12 @@ body {
 
 .timeline-item img {
   float: right;
-  margin-right: 15px;
-  width: 100px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  width: 250px;
+  max-width: 45%;
+  height: auto;
+  border-radius: 8px;
 }
 
 /* SECTION */
@@ -321,8 +325,7 @@ footer {
 }
 
 img {
-  max-width:none;
-  width: 800px;
+  max-width:100%;
   height: auto;
 }
 
