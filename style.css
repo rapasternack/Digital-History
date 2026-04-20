@@ -260,6 +260,22 @@ nav {
   box-shadow: 
     0 0 0 1px rgba(255,255,255,0.08),
     0 8px 25px rgba(0,0,0,0.8);
+
+}
+
+.timeline img {
+  width: 80px;
+  border-radius: 6px;
+}
+
+.timeline img {
+  object-fit: cover;
+}
+
+.timeline-item img {
+  float: left;
+  margin-right: 15px;
+  width: 100px;
 }
 
 /* SECTION */
