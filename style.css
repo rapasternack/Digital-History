@@ -302,11 +302,6 @@ nav {
   transition: all 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  border-color: #c2a878;
-}
-
 .card a {
   color: #c2a878;
   text-decoration: none;
