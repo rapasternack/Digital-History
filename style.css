@@ -103,7 +103,7 @@ nav {
 
 /* SECTIONS */
 .section {
-  padding: 50px 0;
+  padding: 100px 0;
 }
 
 .light {
@@ -379,17 +379,9 @@ a:active { color: rgb(244, 242, 242); }     /* Clicked */
 
 /* PADDING */
 /* gives breathing room under navbar across ALL pages */
-body {
-  padding-top: 80px;
-}
-
-/* keeps section spacing consistent */
-.section {
-  padding-top: 70px;
-  padding-bottom: 70px;
-}
-
-/* prevents headers from adding extra weird spacing */
 .section h2 {
-  margin-top: 0;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 20px 0 15px 0;
 }
