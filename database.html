@@ -1,105 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!-- SEARCH + FILTER -->
+<div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2rem;">
+  <input 
+    type="text" 
+    id="searchInput" 
+    placeholder="Search events..." 
+    style="padding:0.75rem; flex:1; min-width:200px;"
+  >
 
-  <title>Database | Irish–Indigenous Interactions</title>
+  <select id="filterType" style="padding:0.75rem;">
+    <option value="">All Categories</option>
+  </select>
 
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
+  <select id="filterPlace" style="padding:0.75rem;">
+    <option value="">All Locations</option>
+  </select>
+</div>
 
-<body>
-
-<!-- NAVIGATION -->
-<nav>
-  <div class="nav-container">
-    <h1 class="logo">Irish–Indigenous Interactions</h1>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="planning.html">Planning</a>
-      <a href="timeline.html">Timeline</a>
-      <a href="map.html">Map</a>
-      <a href="database.html">Database</a>
-      <a href="sustainability.html">Sustainability</a>
-    </div>
-  </div>
-</nav>
-
-    <!-- INTRO -->
-<section id="analysis-intro" class="section">
-  <div class="container">
-    <h2>Aims of Database</h2>
-
-    <p>
-      The database has not been created yet but aims to include documents such as letters, newspaper articles, and oral histories related to Irish–Indigenous interactions. It will be designed to be searchable and filterable by date, location, and type of source.
-    </p>
-
-  </div>
-</section>
-
-<!-- DATABASE -->
-<section id="database" class="section light">
-  <div class="container">
-    <h2>Primary Source Database</h2>
-    <p>
-      This database compiles primary sources related to Irish–Indigenous interactions, including letters, newspaper articles, and oral histories. It is designed to be searchable and filterable by date, location, and type of source. 
-    </p>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<section class="section light">
-  <div class="container">
-    <h2>Explore the Database</h2>
-
-    <!-- SEARCH + FILTER -->
-    <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2rem;">
-      <input 
-        type="text" 
-        id="searchInput" 
-        placeholder="Search events..." 
-        style="padding:0.75rem; flex:1; min-width:200px;"
-      >
-
-      <select id="filterType" style="padding:0.75rem;">
-        <option value="">All Interaction Types</option>
-      </select>
-    </div>
-
-    <!-- CARD GRID -->
-    <div id="cardContainer" class="grid"></div>
-  </div>
-</section>
+<!-- CARD GRID -->
+<div id="cardContainer" class="grid"></div>
 
 <script>
-let allData = [];
+const allData = [
+  {
+    id: "famine",
+    title: "Great Irish Famine Begins",
+    start_date: "1845",
+    interaction_type: "Colonial Context",
+    place: "Ireland",
+    description: "The potato blight led to mass starvation and emigration under British colonial rule.",
+    source: "https://www.bl.uk/"
+  },
+  {
+    id: "choctaw-donation",
+    title: "Choctaw Nation Donation",
+    start_date: "1847",
+    interaction_type: "Mutual Aid",
+    place: "Choctaw Nation",
+    description: "The Choctaw Nation raised funds for Irish famine relief despite recent displacement.",
+    source: "https://www.choctawnation.com/"
+  },
+  {
+    id: "irish-emigration",
+    title: "Irish Emigration to North America",
+    start_date: "1845–1855",
+    interaction_type: "Migration",
+    place: "North America",
+    description: "Irish migration reshaped settler colonial societies and intersected with Indigenous lands.",
+    source: "https://www.loc.gov/"
+  },
+  {
+    id: "colonial-expansion",
+    title: "Expansion of Settler Colonialism",
+    start_date: "19th century",
+    interaction_type: "Colonial Context",
+    place: "North America",
+    description: "Irish immigrants became part of expanding settler colonial systems displacing Indigenous peoples.",
+    source: "https://www.nationalarchives.gov.uk/"
+  },
+  {
+    id: "kindred-spirits",
+    title: "Kindred Spirits Sculpture",
+    start_date: "2017",
+    interaction_type: "Commemoration",
+    place: "Ireland",
+    description: "A sculpture honoring the Choctaw donation and symbolizing cross-cultural solidarity.",
+    source: "https://www.corkcoco.ie/"
+  },
+  {
+    id: "irish-to-navajo",
+    title: "Irish Donations to Navajo Nation",
+    start_date: "2020",
+    interaction_type: "Mutual Aid",
+    place: "Navajo Nation",
+    description: "Irish donors raised funds for Navajo communities during COVID-19.",
+    source: "https://www.navajo-nsn.gov/"
+  },
+  {
+    id: "global-solidarity",
+    title: "Global Indigenous–Irish Solidarity",
+    start_date: "21st century",
+    interaction_type: "Activism",
+    place: "Global",
+    description: "Modern movements connect Irish and Indigenous histories of colonialism and resistance.",
+    source: "https://native-land.ca/"
+  }
+];
 
-fetch('Digital History Spreadsheet.csv')
-  .then(res => res.text())
-  .then(text => {
-    const rows = text.split('\n').map(r => r.split(','));
-    const headers = rows[0];
-
-    allData = rows.slice(1).map(row => {
-      let obj = {};
-      headers.forEach((h, i) => obj[h.trim()] = row[i]);
-      return obj;
-    });
-
-    populateFilter();
-    renderCards(allData);
-  });
-
+// POPULATE CATEGORY FILTER
 function populateFilter() {
   const select = document.getElementById('filterType');
   const types = [...new Set(allData.map(d => d.interaction_type))];
 
   types.forEach(type => {
-    if (!type) return;
     const option = document.createElement('option');
     option.value = type;
     option.textContent = type;
@@ -107,6 +99,20 @@ function populateFilter() {
   });
 }
 
+// POPULATE LOCATION FILTER
+function populatePlaceFilter() {
+  const select = document.getElementById('filterPlace');
+  const places = [...new Set(allData.map(d => d.place))];
+
+  places.forEach(place => {
+    const option = document.createElement('option');
+    option.value = place;
+    option.textContent = place;
+    select.appendChild(option);
+  });
+}
+
+// RENDER CARDS
 function renderCards(data) {
   const container = document.getElementById('cardContainer');
   container.innerHTML = '';
@@ -116,49 +122,55 @@ function renderCards(data) {
     card.className = 'card';
 
     card.innerHTML = `
-      <h3>${item.title || 'Untitled Event'}</h3>
-      <p><strong>Date:</strong> ${item.start_date || ''}</p>
-      <p><strong>Type:</strong> ${item.interaction_type || ''}</p>
-      <p>${item.description || ''}</p>
-      <p><em>${item.place || ''}</em></p>
+      <h3>${item.title}</h3>
+      <p><strong>Date:</strong> ${item.start_date}</p>
+      <p><strong>Category:</strong> ${item.interaction_type}</p>
+      <p>${item.description}</p>
+      <p><em>${item.place}</em></p>
+
+      <p>
+        <a href="${item.source}" target="_blank">View Source</a>
+      </p>
+
+      <p>
+        <a href="timeline.html#${item.id}">View on Timeline</a>
+      </p>
     `;
 
     container.appendChild(card);
   });
 }
 
+// FILTER LOGIC
 function applyFilters() {
   const search = document.getElementById('searchInput').value.toLowerCase();
-  const filter = document.getElementById('filterType').value;
+  const filterType = document.getElementById('filterType').value;
+  const filterPlace = document.getElementById('filterPlace').value;
 
   const filtered = allData.filter(item => {
     const text = `
-      ${item.title} 
-      ${item.description} 
-      ${item.people} 
+      ${item.title}
+      ${item.description}
       ${item.place}
     `.toLowerCase();
 
     const matchesSearch = text.includes(search);
-    const matchesFilter = !filter || item.interaction_type === filter;
+    const matchesType = !filterType || item.interaction_type === filterType;
+    const matchesPlace = !filterPlace || item.place === filterPlace;
 
-    return matchesSearch && matchesFilter;
+    return matchesSearch && matchesType && matchesPlace;
   });
 
   renderCards(filtered);
 }
 
+// EVENT LISTENERS
 document.getElementById('searchInput').addEventListener('input', applyFilters);
 document.getElementById('filterType').addEventListener('change', applyFilters);
+document.getElementById('filterPlace').addEventListener('change', applyFilters);
+
+// INIT
+populateFilter();
+populatePlaceFilter();
+renderCards(allData);
 </script>
-
-<!-- FOOTER -->
-<footer>
-  <p>
-    Rachel Pasternack | Digital History Project | Spring 2026 |
-    <a href="https://github.com/rapasternack/Digital-History" target="_blank">View Repository</a>
-  </p>
-</footer>
-
-</body>
-</html>
