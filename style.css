@@ -493,3 +493,30 @@ a:active { color: rgb(244, 242, 242); }     /* Clicked */
 .map-controls {
   margin-bottom: 10px;
 }
+
+/* Compact intro banner */
+.intro-banner {
+  padding: 30px 0;
+  background: #f6f3ee;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.intro-banner .container {
+  max-width: 900px;
+}
+
+/* Title styling */
+.intro-banner h2 {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  letter-spacing: 0.2px;
+}
+
+/* Paragraph styling */
+.intro-banner p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #333;
+  max-width: 750px;
+}
