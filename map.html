@@ -57,9 +57,9 @@
 
 <section class="section">
   <div class="container">
-    <h2>Aims of Map</h2>
+    <h2>Aims of the Map</h2>
     <p>
-      This interactive map visualizes Irish–Indigenous connections across time and space. Users can filter events by type to explore patterns of aid, commemoration, cultural exchange, and conflict.
+      This interactive map traces the complex and often overlooked connections between Irish and Indigenous communities across time and geography. It brings together moments of solidarity, cultural exchange, commemoration, and conflict to reveal how these histories intersect in meaningful ways. By filtering events by theme, users can explore patterns of relationship-building, mutual aid, and historical memory, uncovering a layered narrative that challenges simple or isolated interpretations of the past.
     </p>
   </div>
 </section>
@@ -414,8 +414,8 @@ data.forEach(item => {
     }
   `);
 
-  marker.category = item.category; // IMPORTANT for filtering
-  marker.addTo(map); // 👈 THIS is what makes points appear
+  marker.category = item.category; // 
+  marker.addTo(map); //
   markers.push(marker);
 });
 
