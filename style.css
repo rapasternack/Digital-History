@@ -482,3 +482,14 @@ a:active { color: rgb(244, 242, 242); }     /* Clicked */
 .card a:hover {
   text-decoration: underline;
 }
+
+#leaflet-map {
+  height: 500px;
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.map-controls {
+  margin-bottom: 10px;
+}

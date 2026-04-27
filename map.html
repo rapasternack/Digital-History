@@ -2,17 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>Map | Irish–Indigenous Interactions</title>
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    #leaflet-map {
+      height: 500px;
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 10px;
+    }
+
+    .map-controls {
+      margin-bottom: 10px;
+    }
+
+    .map-source {
+      margin-top: 15px;
+      font-size: 0.9rem;
+    }
+
+    .map-controls select {
+      padding: 6px;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- NAV -->
 <nav>
   <div class="nav-container">
     <h1 class="logo">Irish–Indigenous Interactions</h1>
@@ -27,46 +57,43 @@
   </div>
 </nav>
 
-    <!-- INTRO -->
-<section id="analysis-intro" class="section">
+<!-- INTRO -->
+<section class="section">
   <div class="container">
     <h2>Aims of Map</h2>
-
     <p>
-      The map is planned to include links to sources used for this project. This have not been included yet.
+      This interactive map visualizes Irish–Indigenous connections across time and space. Users can filter events by type to explore patterns of aid, commemoration, cultural exchange, and conflict.
     </p>
-
   </div>
 </section>
-
 
 <!-- MAP -->
-<section id="map-instructions" class="section">
-  <div class="container">
-    <h2>More on the Map</h2>
-
-    <p>
-      This map traces Irish–Indigenous connections across time and geography. Each marker represents a moment of solidarity, remembrance, or shared history.
-    </p>
-
-    <p>
-      The map connects historical events to modern commemorations, showing how these relationships continue to evolve.
-    </p>
-  </div>
-</section>
-
-<section id="map" class="section dark">
+<section class="section dark">
   <div class="container">
     <h2>Interactive Map</h2>
 
-    <iframe
-      id="mapFrame"
-      src="https://www.arcgis.com/apps/Embed/index.html?webmap=31bdf59a4a064e49916ab627e410fa43&home=true&zoom=true&legend=true"
-      width="100%"
-      height="500"
-      style="border:0;"
-      loading="lazy">
-    </iframe>
+    <div class="map-controls">
+      <label>Filter:</label>
+      <select id="filter">
+        <option value="all">All</option>
+        <option value="aid">Aid / Philanthropy</option>
+        <option value="commemoration">Commemoration</option>
+        <option value="exchange">Cultural Exchange</option>
+        <option value="conflict">Conflict / Displacement</option>
+      </select>
+    </div>
+
+    <div id="leaflet-map"></div>
+
+    <div class="map-source">
+      <p>
+        <strong>Sources:</strong>
+        Project dataset compiled from research including
+        <a href="https://theclio.com/tour/3090" target="_blank">
+          Long Island Redlining and Racism Tour (The Clio)
+        </a>
+      </p>
+    </div>
 
   </div>
 </section>
@@ -78,6 +105,65 @@
     <a href="https://github.com/rapasternack/Digital-History" target="_blank">View Repository</a>
   </p>
 </footer>
+
+<script>
+// INIT MAP
+const map = L.map('leaflet-map').setView([40, -30], 3);
+
+// BASEMAP
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: '&copy; OpenStreetMap contributors'
+}).addTo(map);
+
+// DATA
+const data = [/* FULL DATASET */
+{title:"Choctaw Nation Donation to Ireland",lat:34.738,lng:-95.882,category:"aid",type:"Aid / Philanthropy",desc:"Choctaw Nation members raised funds for Irish famine relief.",source:"Irish Famine Relief Wikipedia",people:""},
+{title:"Trail of Tears Relocation",lat:33,lng:-85,category:"conflict",type:"Forced Relocation",desc:"Removal of Native nations under Indian Removal Act.",source:"Trail of Tears Wikipedia",people:""},
+{title:"Irish Immigrant Observations",lat:53.142,lng:-7.692,category:"exchange",type:"Cultural Observation",desc:"Irish immigrants noted parallels with Native oppression.",source:"Irish Famine Relief Wikipedia",people:"Micí Mac Gabhann"},
+{title:"Irish Famine Relief Distribution",lat:53,lng:-8,category:"aid",type:"Aid / Philanthropy",desc:"Funds distributed across famine regions.",source:"Choctaw Delegation Visit Coverage",people:""},
+{title:"Kindred Spirits Memorial",lat:51.916,lng:-8.168,category:"commemoration",type:"Commemoration",desc:"Sculpture honoring Choctaw aid.",source:"Kindred Spirits Sculpture Coverage",people:""},
+{title:"Choctaw Delegation Visit",lat:51.916,lng:-8.168,category:"exchange",type:"Cultural Exchange",desc:"Choctaw delegation visits Ireland.",source:"Kindred Spirits Sculpture Coverage",people:""},
+{title:"Irish Presidential Visit",lat:53.343,lng:-6.254,category:"commemoration",type:"Diplomatic",desc:"Mary Robinson visit.",source:"Academic Coverage",people:"Mary Robinson"},
+{title:"COVID Aid to Navajo",lat:36.107,lng:-109.067,category:"aid",type:"Aid",desc:"Irish donors raised funds during COVID.",source:"Navajo Aid Article",people:""},
+{title:"NYC Conference",lat:40.7128,lng:-74.006,category:"exchange",type:"Academic",desc:"Conference on Irish–Native relations.",source:"Conference Coverage",people:""},
+{title:"Treaty of Dancing Rabbit Creek",lat:34.738,lng:-95.882,category:"conflict",type:"Forced Relocation",desc:"Choctaw land cession.",source:"Choctaw History",people:""},
+{title:"American Civil War",lat:34.738,lng:-95.882,category:"conflict",type:"War",desc:"Native nations divided; Irish participation.",source:"Choctaw History",people:""},
+{title:"Famine Walk",lat:22,lng:-67,category:"commemoration",type:"Commemoration",desc:"Choctaw leaders join Irish memorial walk.",source:"Choctaw History",people:""},
+{title:"Mansion House Plaque",lat:53.343,lng:-6.254,category:"commemoration",type:"Commemoration",desc:"Plaque honoring Choctaw aid.",source:"Navajo Aid Article",people:""},
+{title:"Eternal Heart Sculpture",lat:34.738,lng:-95.882,category:"commemoration",type:"Commemoration",desc:"Companion monument in Oklahoma.",source:"Kindred Spirits Coverage",people:""},
+{title:"Navajo Hopi Rug Gift",lat:34.738,lng:-95.882,category:"commemoration",type:"Commemoration",desc:"Gift symbolizing gratitude.",source:"Navajo Aid Article",people:""}
+];
+
+// MARKERS
+const markers = [];
+
+data.forEach(item => {
+  const marker = L.marker([item.lat, item.lng]).bindPopup(`
+    <strong>${item.title}</strong><br>
+    <em>${item.type}</em><br><br>
+    ${item.desc}<br><br>
+    ${item.people ? "<strong>People:</strong> " + item.people + "<br>" : ""}
+    <strong>Source:</strong> ${item.source}
+  `);
+
+  marker.category = item.category;
+  markers.push(marker);
+  marker.addTo(map);
+});
+
+// FILTER
+document.getElementById("filter").addEventListener("change", function () {
+  const value = this.value;
+
+  markers.forEach(marker => {
+    if (value === "all" || marker.category === value) {
+      marker.addTo(map);
+    } else {
+      map.removeLayer(marker);
+    }
+  });
+});
+</script>
 
 </body>
 </html>
