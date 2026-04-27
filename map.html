@@ -385,25 +385,29 @@ people:"Navajo/Hopi Representatives"
 ];
 
 // MARKERS
-const markers = [];
-
-data.forEach(item => {
-  const marker = L.marker([item.lat, item.lng], {
-    icon: createIcon(getColor(item.category))
-  }).bindPopup(`
-    <strong>${item.title}</strong><br>
-    <em>${item.type}</em><br><br>
-    ${item.desc}<br><br>
-    ${item.people ? "<strong>People:</strong> " + item.people + "<br>" : ""}
-    <strong>Source:</strong> 
-    <a href="${item.source}" target="_blank">View Source</a>
-  `);
-
-  marker.category = item.category;
-  markers.push(marker);
-  marker.addTo(map);
+const marker = L.marker([item.lat, item.lng], {
+  icon: createIcon(getColor(item.category))
 });
 
+const safeSource =
+  item.source && item.source.startsWith("http")
+    ? item.source
+    : null;
+
+marker.bindPopup(`
+  <strong>${item.title}</strong><br>
+  <em>${item.type}</em><br><br>
+  ${item.desc}<br><br>
+  ${item.people ? "<strong>People:</strong> " + item.people + "<br><br>" : ""}
+  <strong>Source:</strong><br>
+  ${
+    safeSource
+      ? `<a href="${safeSource}" target="_blank" rel="noopener noreferrer">
+           Open External Source
+         </a>`
+      : `Source not available`
+  }
+`);
 // FILTER
 document.getElementById("filter").addEventListener("change", function () {
   const value = this.value;
