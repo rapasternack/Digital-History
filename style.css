@@ -16,13 +16,11 @@ h1, h2, h3 {
   margin: 0 0 12px 0;
 }
 
-/* GLOBAL IMAGE RULE (UNIFORM SIZE) */
+/* GLOBAL IMAGE RESET (IMPORTANT FIX) */
 img {
-  width: 260px;
-  height: 260px;
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
   display: block;
-  border-radius: 10px;
 }
 
 /* container */
@@ -98,7 +96,6 @@ nav {
   color: white;
   padding: 70px 20px 50px;
   text-align: center;
-  position: relative;
   margin-bottom: 30px;
 }
 
@@ -106,7 +103,6 @@ nav {
   font-family: 'Playfair Display', serif;
   font-size: 2.5rem;
   margin: 0;
-  letter-spacing: 0.5px;
 }
 
 .intro-banner p {
@@ -182,6 +178,14 @@ nav {
   color: #d6d2cb;
 }
 
+/* card images */
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 /* links */
 a {
   color: #c2a878;
@@ -228,7 +232,7 @@ a:hover {
   flex: 1;
 }
 
-/* overridden image for timeline consistency */
+/* timeline images (FIXED SIZE ONLY HERE) */
 .timeline-img {
   width: 260px;
   height: 260px;
@@ -236,6 +240,7 @@ a:hover {
   border-radius: 10px;
   border: 4px solid #111;
   box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  flex-shrink: 0;
 }
 
 /* mobile */
@@ -286,6 +291,23 @@ a:hover {
 }
 
 /* =========================
+   SKETCH / GALLERY
+========================= */
+.sketch-placeholder {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.sketch-placeholder img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* =========================
    FOOTER
 ========================= */
 footer {
@@ -303,11 +325,4 @@ footer {
 .caption {
   font-size: 0.85rem;
   color: #999;
-}
-
-.sketch-placeholder {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
 }
