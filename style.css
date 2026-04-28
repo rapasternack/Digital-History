@@ -12,15 +12,7 @@ body {
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
-  letter-spacing: 0.5px;
   margin: 0 0 12px 0;
-}
-
-/* GLOBAL IMAGE RESET (IMPORTANT FIX) */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
 }
 
 /* container */
@@ -31,7 +23,7 @@ img {
 }
 
 /* =========================
-   NAVBAR
+   NAV
 ========================= */
 nav {
   position: fixed;
@@ -52,147 +44,12 @@ nav {
 
 .logo {
   font-size: 1.3rem;
-  color: #f4f1ea;
 }
 
 .nav-links a {
   color: white;
-  text-decoration: none;
   margin-left: 20px;
-}
-
-.nav-links a:hover {
-  text-decoration: underline;
-}
-
-/* =========================
-   SECTIONS
-========================= */
-.section {
-  padding: 45px 0;
-}
-
-.section.light {
-  background: #181818;
-}
-
-.section.dark {
-  background: #0f0f0f;
-}
-
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-/* =========================
-   INTRO BANNER
-========================= */
-.intro-banner {
-  width: 100%;
-  background: linear-gradient(135deg, #080808, #3b5b7a);
-  color: white;
-  padding: 70px 20px 50px;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.intro-banner h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  margin: 0;
-}
-
-.intro-banner p {
-  max-width: 700px;
-  margin: 10px auto 0;
-  font-size: 1.1rem;
-  opacity: 0.9;
-}
-
-/* =========================
-   HERO
-========================= */
-.hero {
-  height: 90vh;
-  background: url('images/irish-indigenous.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  position: relative;
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
-
-/* =========================
-   GRID + CARDS
-========================= */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: #1c1c1c;
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.05);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h3 {
-  margin-top: 0;
-  color: #f4f1ea;
-}
-
-.card p {
-  color: #d6d2cb;
-}
-
-/* card images */
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* links */
-a {
-  color: #c2a878;
-}
-
-a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* =========================
@@ -200,26 +57,29 @@ a:hover {
 ========================= */
 .timeline {
   margin: 60px 0;
-  padding-left: 40px;
   border-left: 2px solid rgba(255,255,255,0.15);
+  padding-left: 40px;
 }
 
+/* MAIN CARD */
 .timeline-item {
   display: flex;
+  justify-content: space-between;
   gap: 25px;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   padding: 25px;
   background: #1c1c1c;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.06);
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-  transition: transform 0.3s ease;
 }
 
-.timeline-item:hover {
-  transform: translateY(-5px);
+/* LEFT TEXT */
+.timeline-content {
+  flex: 1;
 }
 
+/* DATE */
 .timeline-date {
   font-size: 0.85rem;
   letter-spacing: 2px;
@@ -228,101 +88,54 @@ a:hover {
   margin-bottom: 10px;
 }
 
-.timeline-content {
-  flex: 1;
+/* RIGHT MEDIA */
+.timeline-media {
+  width: 180px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-/* timeline images (FIXED SIZE ONLY HERE) */
+/* IMAGE */
 .timeline-img {
-  width: 260px;
-  height: 260px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
   border-radius: 10px;
-  border: 4px solid #111;
+  border: 3px solid #111;
   box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-  flex-shrink: 0;
 }
 
-/* mobile */
+/* CAPTION */
+.caption {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 8px;
+  text-align: right;
+  max-width: 180px;
+}
+
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 768px) {
   .timeline-item {
     flex-direction: column;
+  }
+
+  .timeline-media {
+    width: 100%;
+    align-items: flex-start;
   }
 
   .timeline-img {
     width: 100%;
     height: auto;
   }
-}
 
-/* =========================
-   MAP
-========================= */
-#leaflet-map,
-#map iframe {
-  width: 100%;
-  height: 500px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-/* =========================
-   FILTER BAR
-========================= */
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin: 30px 0;
-}
-
-.filter-input,
-.filter-select {
-  padding: 12px 14px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: #1c1c1c;
-  color: #eae6df;
-}
-
-.filter-input {
-  flex: 1;
-  min-width: 220px;
-}
-
-/* =========================
-   SKETCH / GALLERY
-========================= */
-.sketch-placeholder {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-}
-
-.sketch-placeholder img {
-  width: 260px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #0a0a0a;
-  border-top: 1px solid rgba(255,255,255,0.1);
-  font-size: 0.85rem;
-  color: #aaa;
-}
-
-/* =========================
-   UTILITIES
-========================= */
-.caption {
-  font-size: 0.85rem;
-  color: #999;
+  .caption {
+    text-align: left;
+    max-width: 100%;
+  }
 }
