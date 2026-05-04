@@ -53,6 +53,76 @@ nav {
 }
 
 /* =========================
+   HERO BACKGROUND
+========================= */
+.hero {
+  height: 100vh;
+  background: url('images/irish-indigenous.jpg') center/cover no-repeat;
+  position: relative;
+}
+
+/* DARK OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+
+.overlay p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.container {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* CARD GRID */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* CARD STYLE */
+.card {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* =========================
    TIMELINE
 ========================= */
 .timeline {
@@ -138,4 +208,16 @@ nav {
     text-align: left;
     max-width: 100%;
   }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: #000;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #aaa;
 }
