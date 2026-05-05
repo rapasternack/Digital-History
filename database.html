@@ -8,6 +8,8 @@
 
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <meta name="description" content="Searchable database of Irish–Indigenous historical interactions, solidarity networks, and commemorative events.">
 </head>
 
 <body>
@@ -15,50 +17,69 @@
 <nav>
   <div class="nav-container">
     <h1 class="logo">Irish–Indigenous Interactions</h1>
+
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="methods.html">Methods</a>
       <a href="timeline.html">Timeline</a>
       <a href="map.html">Map</a>
-      <a href="database.html">Database</a>
+      <a href="database.html" aria-current="page">Database</a>
       <a href="sustainability.html">Sustainability</a>
     </div>
   </div>
 </nav>
 
-<section class="section light">
+<header class="section">
   <div class="container">
-    <h2>Primary Source Database</h2>
+
+    <h2>Interactive Source Database</h2>
+
     <p>
-      This database brings together key moments, sources, and themes related to Irish–Indigenous interactions. 
-      It complements the timeline and map by allowing users to search, filter, and explore connections across time and space.
+      This database organizes Irish–Indigenous interactions as structured data.
+      It allows users to explore patterns of aid, displacement, memory, and cultural exchange across time and geography.
     </p>
+
   </div>
-</section>
+</header>
 
 <section class="section">
   <div class="container">
 
-    <h2>Explore the Database</h2>
+    <h3>Search the Archive</h3>
 
     <div class="filter-bar">
-      <input type="text" id="searchInput" placeholder="Search events..." class="filter-input">
+
+      <input type="text" id="searchInput" class="filter-input"
+        placeholder="Search titles, descriptions, places..." />
 
       <select id="filterType" class="filter-select">
-        <option value="">All Categories</option>
+        <option value="">All Interaction Types</option>
       </select>
 
       <select id="filterPlace" class="filter-select">
         <option value="">All Locations</option>
       </select>
+
     </div>
 
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+
+    <h3>Results</h3>
     <div id="cardContainer" class="grid"></div>
 
   </div>
 </section>
 
 <script>
+
+/* =========================
+   FULL DATASET
+========================= */
+
 const allData = [
 
 {
@@ -67,7 +88,6 @@ title:"Choctaw Nation Donation to Ireland",
 start_date:"1847-03",
 lat:34.738,
 lng:-95.882,
-category:"aid",
 interaction_type:"Aid / Philanthropy",
 place:"Choctaw Nation",
 description:"Choctaw Nation members raised approximately $170 for Irish famine relief shortly after enduring the Trail of Tears.",
@@ -80,7 +100,6 @@ title:"Trail of Tears Relocation",
 start_date:"1830–1833",
 lat:33,
 lng:-85,
-category:"conflict",
 interaction_type:"Forced Relocation",
 place:"Southeastern United States",
 description:"Removal of Choctaw and other tribes under the Indian Removal Act.",
@@ -93,7 +112,6 @@ title:"Irish Immigrant Observations of Native Struggles",
 start_date:"19th century",
 lat:53.142,
 lng:-7.692,
-category:"exchange",
 interaction_type:"Cultural Observation",
 place:"Ireland",
 description:"Irish immigrant writings comparing colonial experiences between Ireland and Indigenous peoples.",
@@ -106,10 +124,9 @@ title:"Irish Famine Relief Distribution",
 start_date:"1847–1848",
 lat:53,
 lng:-8,
-category:"aid",
 interaction_type:"Aid / Philanthropy",
 place:"Ireland",
-description:"Distribution of international famine relief funds including Choctaw contributions.",
+description:"International famine relief including Choctaw contributions distributed across Ireland.",
 source:"https://www.choctawnation.com/news/iti-fabvssa/an-act-of-empathy/"
 },
 
@@ -119,8 +136,7 @@ title:"Kindred Spirits Memorial Installation",
 start_date:"2017-06-18",
 lat:51.916,
 lng:-8.168,
-category:"commemoration",
-interaction_type:"Commemoration / Cultural Memory",
+interaction_type:"Commemoration",
 place:"Midleton, Ireland",
 description:"Sculpture commemorating Choctaw aid to Ireland during the famine.",
 source:"https://www.corkcoco.ie/en/resident/planning-and-development/public-consultations/closed-part-8-development-consultation/part-8-proposed-installation-of-36-m-high-statue-and-ancillary-site-works-at-five-foot-way-carpark"
@@ -132,7 +148,6 @@ title:"Choctaw Delegation Visit to Ireland",
 start_date:"2017-06",
 lat:51.916,
 lng:-8.168,
-category:"exchange",
 interaction_type:"Cultural Exchange",
 place:"Midleton, Ireland",
 description:"Choctaw representatives visited Ireland for memorial and cultural exchange events.",
@@ -145,21 +160,19 @@ title:"Irish Presidential Visit to Choctaw Nation",
 start_date:"1995",
 lat:53.343,
 lng:-6.254,
-category:"commemoration",
 interaction_type:"Diplomatic / Commemorative",
 place:"Dublin (Mansion House)",
-description:"President Mary Robinson visited the Choctaw Nation to acknowledge famine relief support.",
+description:"President Mary Robinson visited the Choctaw Nation to acknowledge famine relief solidarity.",
 source:"https://president.ie/en/results?keywords=mary+robinson+choctaw"
 },
 
 {
 id:"E008",
-title:"Irish–Choctaw Scholarship and Cultural Programs",
+title:"Irish–Choctaw Educational Programs",
 start_date:"2018–2024",
 lat:51.916,
 lng:-8.168,
-category:"exchange",
-interaction_type:"Educational / Cultural Exchange",
+interaction_type:"Educational Exchange",
 place:"Midleton, Ireland",
 description:"Ongoing educational and cultural exchange programs between Irish and Choctaw communities.",
 source:"https://www.ireland.ie/en/usa/austin/news-and-events/news-archive/visit-by-taoiseach-leo-varadkar-to-the-choctaw-nation/"
@@ -171,23 +184,21 @@ title:"Irish COVID-19 Aid to Navajo and Hopi",
 start_date:"2020",
 lat:36.107,
 lng:-109.067,
-category:"aid",
-interaction_type:"Reciprocal Aid / Philanthropy",
+interaction_type:"Reciprocal Aid",
 place:"Navajo Nation",
-description:"Irish fundraising for Navajo and Hopi communities during COVID-19 inspired by Choctaw history.",
+description:"Irish fundraising for Navajo and Hopi communities during COVID-19 pandemic.",
 source:"https://www.ireland.ie/en/usa/austin/news-and-events/news-archive/covid-19-travel-advice/"
 },
 
 {
 id:"E012",
-title:"Irish Settlers Arrive",
+title:"Irish Settlers in Atlantic World",
 start_date:"1600–1800",
 lat:22,
 lng:-67,
-category:"conflict",
-interaction_type:"Relocation",
+interaction_type:"Migration",
 place:"Eastern United States",
-description:"Irish migration and settlement patterns in the Atlantic world interacting with Indigenous lands.",
+description:"Irish migration and settlement patterns intersecting with Indigenous territories.",
 source:"https://www.loc.gov/item/01011512/"
 },
 
@@ -197,7 +208,6 @@ title:"Acts of Union Passed",
 start_date:"1801",
 lat:53.343,
 lng:-6.254,
-category:"other",
 interaction_type:"Legal Act",
 place:"Dublin (Mansion House)",
 description:"Union of Great Britain and Ireland under British Parliament control.",
@@ -210,7 +220,6 @@ title:"Treaty of Dancing Rabbit Creek",
 start_date:"1830–1831",
 lat:34.738,
 lng:-95.882,
-category:"conflict",
 interaction_type:"Forced Relocation",
 place:"Choctaw Nation",
 description:"Choctaw cede Mississippi lands and are forcibly relocated to Indian Territory.",
@@ -219,67 +228,38 @@ source:"https://www.loc.gov/item/2022689491/"
 
 {
 id:"E015",
-title:"Irish Missionaries",
+title:"Irish Missionaries in Indigenous Regions",
 start_date:"1850s",
 lat:33,
 lng:-85,
-category:"exchange",
-interaction_type:"Educational / Cultural Exchange",
+interaction_type:"Cultural Exchange",
 place:"Southeastern United States",
-description:"Irish missionaries traveled to Indigenous communities for religious and educational work.",
+description:"Irish missionaries worked in Indigenous communities in education and religion.",
 source:"https://www.loc.gov/item/36016634/"
 },
 
 {
 id:"E016",
-title:"American Civil War",
+title:"American Civil War Era",
 start_date:"1861–1865",
 lat:34.738,
 lng:-95.882,
-category:"conflict",
-interaction_type:"War",
-place:"Choctaw Nation",
-description:"Indigenous nations were divided during the Civil War era; Irish immigrants fought largely for the Union.",
-source:"https://www.loc.gov/search/?in=&q=american+civil+war+irish+soldier&new=true"
-},
-
-{
-id:"E017",
-title:"Famine Walk",
-start_date:"1990",
-lat:22,
-lng:-67,
-category:"commemoration",
-interaction_type:"Diplomatic / Commemorative",
-place:"Eastern United States",
-description:"Commemorative walk linking Irish famine memory with Indigenous suffering.",
-source:"https://www.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Other/The-Great-Irish-Famine/An-Gorta-Mor"
+interaction_type:"Conflict",
+place:"United States",
+description:"Indigenous nations were divided during the Civil War; Irish immigrants largely served in Union forces.",
+source:"https://www.loc.gov/search/?q=irish+soldiers+civil+war"
 },
 
 {
 id:"E018",
-title:"Eamon de Valera Honorary Chieftain",
+title:"Éamon de Valera Honorary Chief",
 start_date:"1919",
 lat:34.738,
 lng:-95.882,
-category:"exchange",
 interaction_type:"Cultural Exchange",
 place:"Choctaw Nation",
-description:"Éamon de Valera was made an honorary Choctaw chief while raising funds for Irish independence.",
+description:"Éamon de Valera was made honorary Choctaw chief while raising funds for Irish independence.",
 source:"https://catalogue.nli.ie/Collection/vtls000512255"
-},
-
-{
-id:"E019",
-title:"Trek from Mississippi to Oklahoma",
-start_date:"1992",
-lat:34.738,
-lng:-95.882,
-category:"commemoration",
-interaction_type:"Diplomatic / Commemorative",
-place:"Choctaw Nation",
-description:"Irish commemorative trek retraced Choctaw displacement routes in solidarity.",
-source:"https://www.gov.ie/pdf/choctaw-ireland-1992-visit.pdf"
 },
 
 {
@@ -288,24 +268,10 @@ title:"Mansion House Plaque",
 start_date:"1992-05-29",
 lat:53.343,
 lng:-6.254,
-category:"commemoration",
-interaction_type:"Diplomatic / Commemorative",
+interaction_type:"Commemoration",
 place:"Dublin (Mansion House)",
 description:"Plaque unveiled honoring Choctaw famine relief contributions.",
 source:"https://www.dublincity.ie/culture-art-and-film/arts-culture-and-public-spaces/mansion-house"
-},
-
-{
-id:"E021",
-title:"COVID-19 Relief Fundraising",
-start_date:"2020–2021",
-lat:53.343,
-lng:-6.254,
-category:"aid",
-interaction_type:"Aid / Philanthropy",
-place:"Dublin (Mansion House)",
-description:"Irish fundraising for Navajo and Hopi Nations during COVID-19 pandemic.",
-source:"https://www.ireland.ie/en/usa/austin/news-and-events/news-archive/covid-19-travel-advice/"
 },
 
 {
@@ -314,119 +280,96 @@ title:"Eternal Heart Sculpture",
 start_date:"2024",
 lat:34.738,
 lng:-95.882,
-category:"commemoration",
-interaction_type:"Diplomatic / Commemorative",
+interaction_type:"Commemoration",
 place:"Choctaw Nation",
 description:"Monument celebrating ongoing Irish–Choctaw friendship.",
 source:"https://www.choctawnation.com/news/news-releases/choctaw-nation-unveils-eternal-heart-sculpture/"
-},
-
-{
-id:"E023",
-title:"Navajo Hopi Rug Gift",
-start_date:"2025-07-17",
-lat:34.738,
-lng:-95.882,
-category:"commemoration",
-interaction_type:"Diplomatic / Commemorative",
-place:"Choctaw Nation",
-description:"Navajo and Hopi Nations gifted a woven rug to Ireland in gratitude for solidarity.",
-source:"https://www.oireachtas.ie/en/press-centre/news-and-features/20250717-navajo-rug-gifted-to-the-people-of-ireland-during-leinster-house-visit/"
 }
 
 ];
 
-// POPULATE CATEGORY FILTER
-function populateFilter() {
-  const select = document.getElementById('filterType');
-  const types = [...new Set(allData.map(d => d.interaction_type))];
+/* =========================
+   RENDER + FILTER LOGIC
+========================= */
 
-  types.forEach(type => {
-    const option = document.createElement('option');
-    option.value = type;
-    option.textContent = type;
-    select.appendChild(option);
-  });
+function createCard(item) {
+  const card = document.createElement('article');
+  card.className = 'card';
+
+  card.innerHTML = `
+    <h3>${item.title}</h3>
+    <p><strong>Date:</strong> ${item.start_date}</p>
+    <p><strong>Type:</strong> ${item.interaction_type}</p>
+    <p>${item.description}</p>
+    <p><em>${item.place}</em></p>
+    <p><a href="${item.source}" target="_blank">View Source</a></p>
+  `;
+
+  return card;
 }
 
-// POPULATE LOCATION FILTER
-function populatePlaceFilter() {
-  const select = document.getElementById('filterPlace');
-  const places = [...new Set(allData.map(d => d.place))];
-
-  places.forEach(place => {
-    const option = document.createElement('option');
-    option.value = place;
-    option.textContent = place;
-    select.appendChild(option);
-  });
-}
-
-// RENDER CARDS
 function renderCards(data) {
   const container = document.getElementById('cardContainer');
   container.innerHTML = '';
-
-  data.forEach(item => {
-    const card = document.createElement('div');
-    card.className = 'card';
-
-    card.innerHTML = `
-      <h3>${item.title}</h3>
-      <p><strong>Date:</strong> ${item.start_date}</p>
-      <p><strong>Category:</strong> ${item.interaction_type}</p>
-      <p>${item.description}</p>
-      <p><em>${item.place}</em></p>
-
-      <p>
-        <a href="${item.source}" target="_blank">View Source</a>
-      </p>
-    `;
-
-    container.appendChild(card);
-  });
+  data.forEach(item => container.appendChild(createCard(item)));
 }
 
-// FILTER LOGIC
 function applyFilters() {
   const search = document.getElementById('searchInput').value.toLowerCase();
-  const filterType = document.getElementById('filterType').value;
-  const filterPlace = document.getElementById('filterPlace').value;
+  const type = document.getElementById('filterType').value;
+  const place = document.getElementById('filterPlace').value;
 
-  const filtered = allData.filter(item => {
-    const text = `
-      ${item.title}
-      ${item.description}
-      ${item.place}
-    `.toLowerCase();
+  const filtered = allData.filter(d => {
+    const text = `${d.title} ${d.description} ${d.place}`.toLowerCase();
 
-    const matchesSearch = text.includes(search);
-    const matchesType = !filterType || item.interaction_type === filterType;
-    const matchesPlace = !filterPlace || item.place === filterPlace;
-
-    return matchesSearch && matchesType && matchesPlace;
+    return (
+      text.includes(search) &&
+      (!type || d.interaction_type === type) &&
+      (!place || d.place === place)
+    );
   });
 
   renderCards(filtered);
 }
 
-// EVENTS
+/* INIT FILTERS */
+function populateFilters() {
+  const typeSel = document.getElementById('filterType');
+  const placeSel = document.getElementById('filterPlace');
+
+  [...new Set(allData.map(d => d.interaction_type))].forEach(t => {
+    const o = document.createElement('option');
+    o.value = t; o.textContent = t;
+    typeSel.appendChild(o);
+  });
+
+  [...new Set(allData.map(d => d.place))].forEach(p => {
+    const o = document.createElement('option');
+    o.value = p; o.textContent = p;
+    placeSel.appendChild(o);
+  });
+}
+
+/* EVENTS */
 document.getElementById('searchInput').addEventListener('input', applyFilters);
 document.getElementById('filterType').addEventListener('change', applyFilters);
 document.getElementById('filterPlace').addEventListener('change', applyFilters);
 
-// INIT
-populateFilter();
-populatePlaceFilter();
+/* INIT */
+populateFilters();
 renderCards(allData);
+
 </script>
 
-<!-- FOOTER -->
 <footer>
-  <p>
-    Rachel Pasternack | Digital History Project | Spring 2026 |
-    <a href="https://github.com/rapasternack/Digital-History" target="_blank">View Repository</a>
-  </p>
+  <div class="container">
+    <p>
+      Rachel Pasternack · Digital History Project · Spring 2026 ·
+      <a href="https://github.com/rapasternack/Digital-History" target="_blank">
+        GitHub Repository
+      </a>
+    </p>
+  </div>
 </footer>
 
 </body>
