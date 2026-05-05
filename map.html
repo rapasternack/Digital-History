@@ -1,57 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+  <meta charset="UTF-8"/>
   <title>Map | Irish–Indigenous Interactions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <link rel="stylesheet" href="style.css"/>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
+  <!-- Leaflet -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
   <style>
-    #map {
-      height: 580px;
+    #leaflet-map {
+      height: 520px;
       width: 100%;
-      border-radius: 14px;
-      margin-top: 12px;
-      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+      border-radius: 12px;
+      margin-top: 10px;
     }
 
-    .controls {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 12px;
-      flex-wrap: wrap;
+    .map-controls {
+      margin-bottom: 10px;
     }
 
-    select {
-      padding: 8px 10px;
-      border-radius: 8px;
-      background: #111;
-      color: #fff;
-      border: 1px solid #333;
-      font-family: Inter, sans-serif;
+    .map-controls select {
+      padding: 6px;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
     }
 
-    .popup-title {
-      font-weight: 700;
-      font-size: 1rem;
-      margin-bottom: 4px;
-    }
-
-    .popup-meta {
-      font-size: 0.85rem;
-      opacity: 0.85;
-    }
-
-    .popup-desc {
-      margin-top: 6px;
+    .map-source {
+      margin-top: 15px;
+      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -65,21 +47,19 @@
       <a href="index.html">Home</a>
       <a href="methods.html">Methods</a>
       <a href="timeline.html">Timeline</a>
-      <a href="map.html" aria-current="page">Map</a>
+      <a href="map.html">Map</a>
       <a href="database.html">Database</a>
       <a href="sustainability.html">Sustainability</a>
     </div>
   </div>
 </nav>
 
-<main>
-
 <section class="section light">
   <div class="container">
-    <h2>Interactive Map</h2>
+    <h2>Irish–Indigenous Interactive Map</h2>
     <p>
-      This map visualizes Irish–Indigenous interactions across time, showing patterns of displacement,
-      solidarity, cultural exchange, and commemoration.
+      Explore documented interactions between Irish and Indigenous communities across time and geography.
+      Use the filters to examine patterns of aid, commemoration, cultural exchange, and conflict.
     </p>
   </div>
 </section>
@@ -87,310 +67,325 @@
 <section class="section dark">
   <div class="container">
 
-    <div class="controls">
-      <label for="filter">Filter:</label>
+    <div class="map-controls">
+      <label>Filter:</label>
       <select id="filter">
         <option value="all">All</option>
-        <option value="aid">Aid</option>
+        <option value="aid">Aid / Philanthropy</option>
         <option value="commemoration">Commemoration</option>
-        <option value="exchange">Exchange</option>
-        <option value="conflict">Conflict</option>
+        <option value="exchange">Cultural Exchange</option>
+        <option value="conflict">Conflict / Displacement</option>
       </select>
     </div>
 
-    <div id="map"></div>
+    <div id="leaflet-map"></div>
 
   </div>
 </section>
 
-</main>
-
 <footer>
   <p>
     Rachel Pasternack | Digital History Project | Spring 2026 |
-    <a href="https://github.com/rapasternack/Digital-History" target="_blank">Repository</a>
+    <a href="https://github.com/rapasternack/Digital-History" target="_blank">View Repository</a>
   </p>
 </footer>
 
 <script>
-
-const map = L.map('map').setView([40, -30], 3);
+// MAP
+const map = L.map('leaflet-map').setView([40, -30], 3);
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
 
-function color(c) {
-  return {
-    aid:"#2ecc71",
-    commemoration:"#3498db",
-    exchange:"#f39c12",
-    conflict:"#e74c3c"
-  }[c] || "#888";
+// ICON COLORS
+function getColor(category) {
+  if (category === "aid") return "green";
+  if (category === "commemoration") return "blue";
+  if (category === "exchange") return "orange";
+  if (category === "conflict") return "red";
+  return "gray";
 }
 
-function icon(c) {
+function createIcon(color) {
   return L.divIcon({
-    html:`<div style="background:${color(c)};width:12px;height:12px;border-radius:50%;border:2px solid white"></div>`
+    className: 'custom-icon',
+    html: `<div style="
+      background:${color};
+      width:14px;
+      height:14px;
+      border-radius:50%;
+      border:2px solid white;"></div>`
   });
 }
 
-/* =========================
-   FULL DATASET (CLEANED)
-========================= */
-
+// DATA (FULL DETAIL)
 const data = [
 {
 id:"E001",
-title:"Choctaw Donation to Ireland",
-date:"1847",
+title:"Choctaw Nation Donation to Ireland",
+date:"March 1847",
 lat:34.738,lng:-95.882,
 category:"aid",
-type:"Philanthropy",
-desc:"Choctaw raised funds for Irish famine relief after the Trail of Tears.",
-source:"https://www.choctawnation.com/news/iti-fabvssa/an-act-of-empathy/"
+type:"Aid / Philanthropy",
+desc:"Choctaw Nation members raised approximately $170 for Irish famine relief shortly after enduring the Trail of Tears.",
+source:"https://www.choctawnation.com/news/iti-fabvssa/an-act-of-empathy (context: Irish famine primary accounts incl. 1847 relief reports) + https://commons.wikimedia.org/wiki/File:NilesRegister_Article_on_the_Choctaw_Contribution_for_Irish_relief.png",
 },
+
 {
 id:"E002",
-title:"Trail of Tears",
+title:"Trail of Tears Relocation",
 date:"1830–1833",
 lat:33,lng:-85,
 category:"conflict",
 type:"Forced Relocation",
-desc:"Removal of Choctaw and other nations under U.S. policy.",
+desc:"Choctaw forced removal under the Indian Removal Act.",
 source:"https://www.loc.gov/item/2024791363/"
 },
+
 {
 id:"E003",
-title:"Irish Immigrant Writings",
-date:"19th c.",
+title:"Irish Immigrant Observations of Native Struggles",
+date:"19th century",
 lat:53.142,lng:-7.692,
 category:"exchange",
 type:"Cultural Observation",
-desc:"Comparisons of colonial experience in Irish immigrant writing.",
-source:"https://dp.la/item/68b227cc618f4f93f48f9aba16c53f24/"
+desc:"Irish immigrant writings comparing colonial experiences.",
+source:"https://dp.la/item/68b227cc618f4f93f48f9aba16c53f24/",
 },
+
 {
 id:"E004",
-title:"Irish Famine Relief",
+title:"Irish Famine Relief Distribution",
 date:"1847–1848",
 lat:53,lng:-8,
 category:"aid",
-type:"Humanitarian Aid",
-desc:"International famine relief including Choctaw contributions.",
-source:"https://www.choctawnation.com/news/iti-fabvssa/an-act-of-empathy/"
+type:"Aid / Philanthropy",
+desc:"Distribution of international famine relief funds.",
+source:"https://www.choctawnation.com/news/iti-fabvssa/an-act-of-empathy/",
 },
+
 {
 id:"E005",
-title:"Kindred Spirits Monument",
-date:"2017",
+title:"Kindred Spirits Memorial Installation",
+date:"June 18, 2017",
 lat:51.916,lng:-8.168,
 category:"commemoration",
-type:"Public Memory",
-desc:"Sculpture honoring Choctaw solidarity.",
-source:"https://www.corkcoco.ie/"
+type:"Commemoration / Cultural Memory",
+desc:"Sculpture commemorating Choctaw aid to Ireland.",
+source:"https://www.corkcoco.ie/en/resident/planning-and-development/public-consultations/closed-part-8-development-consultation/part-8-proposed-installation-of-36-m-high-statue-and-ancillary-site-works-at-five-foot-way-carpark",
 },
+
 {
 id:"E006",
-title:"Choctaw Delegation Ireland",
-date:"2017",
+title:"Choctaw Delegation Visit to Ireland",
+date:"June 2017",
 lat:51.916,lng:-8.168,
 category:"exchange",
-type:"Diplomatic Visit",
-desc:"Cultural exchange visit.",
+type:"Cultural Exchange",
+desc:"Choctaw representatives visit Ireland for commemoration.",
 source:"https://www.choctawnation.com/about/history/irish-connection/"
 },
+
 {
 id:"E007",
-title:"Mary Robinson Visit",
+title:"Irish Presidential Visit to Choctaw Nation",
 date:"1995",
 lat:53.343,lng:-6.254,
 category:"commemoration",
-type:"Diplomatic Recognition",
-desc:"Irish president visited Choctaw Nation.",
-source:"https://president.ie/"
+type:"Diplomatic / Commemorative",
+desc:"President Mary Robinson visit acknowledging Choctaw aid.",
+source:"https://president.ie/en/results?keywords=mary+robinson+choctaw"
 },
+
 {
 id:"E008",
-title:"Education Exchange Programs",
+title:"Irish–Choctaw Scholarship and Cultural Programs",
 date:"2018–2024",
 lat:51.916,lng:-8.168,
 category:"exchange",
-type:"Academic Exchange",
-desc:"Scholarship and cultural programs.",
-source:"https://www.ireland.ie/"
+type:"Educational / Cultural Exchange",
+desc:"Ongoing educational exchange programs.",
+source: "https://www.ireland.ie/en/usa/austin/news-and-events/news-archive/visit-by-taoiseach-leo-varadkar-to-the-choctaw-nation/"
 },
+
 {
 id:"E009",
-title:"COVID-19 Aid",
+title:"Irish COVID-19 Aid to Navajo and Hopi",
 date:"2020",
 lat:36.107,lng:-109.067,
 category:"aid",
-type:"Mutual Aid",
-desc:"Irish fundraising for Navajo & Hopi Nations.",
-source:"https://www.ireland.ie/"
+type:"Reciprocal Aid / Philanthropy",
+desc:"Irish fundraising inspired by Choctaw donation.",
+source:"https://www.ireland.ie/en/usa/austin/news-and-events/news-archive/covid-19-travel-advice/"
 },
+
 {
 id:"E012",
-title:"Irish Migration",
+title:"Irish Settlers Arrive",
 date:"1600–1800",
 lat:22,lng:-67,
 category:"conflict",
-type:"Colonial Migration",
-desc:"Irish settlement in Indigenous territories.",
-source:"https://www.loc.gov/"
+type:"Relocation",
+desc:"Irish migration and settlement patterns in the Atlantic world.",
+source:"https://www.loc.gov/item/01011512/"
 },
+
 {
 id:"E013",
-title:"Acts of Union",
+title:"Acts of Union Passed",
 date:"1801",
 lat:53.343,lng:-6.254,
-category:"conflict",
-type:"Political Union",
-desc:"Formation of United Kingdom of Great Britain and Ireland.",
-source:"https://www.parliament.uk/"
+category:"other",
+type:"Legal Act",
+desc:"Union of Great Britain and Ireland.",
+source:"https://www.parliament.uk/about/living-heritage/evolutionofparliament/legislativescrutiny/parliamentandireland/collections/ireland/act-of-union-1800/"
 },
+
 {
 id:"E014",
-title:"Dancing Rabbit Creek Treaty",
+title:"Treaty of Dancing Rabbit Creek",
 date:"1830–1831",
 lat:34.738,lng:-95.882,
 category:"conflict",
-type:"Land Cession",
-desc:"Choctaw land cession and removal.",
+type:"Forced Relocation",
+desc:"Choctaw land cession treaty.",
 source:"https://www.loc.gov/item/2022689491/"
 },
+
 {
 id:"E015",
 title:"Irish Missionaries",
 date:"1850s",
 lat:33,lng:-85,
 category:"exchange",
-type:"Religious Mission",
-desc:"Irish missionary activity in Indigenous regions.",
-source:"https://www.loc.gov/"
+type:"Educational / Cultural Exchange",
+desc:"Missionary records and correspondence.",
+source:"https://www.loc.gov/item/36016634/"
 },
+
 {
 id:"E016",
-title:"Civil War Era",
+title:"American Civil War",
 date:"1861–1865",
 lat:34.738,lng:-95.882,
 category:"conflict",
 type:"War",
-desc:"Indigenous displacement during Civil War era.",
-source:"https://www.loc.gov/"
+desc:"Native nations in Civil War era.",
+source:"https://www.loc.gov/search/?in=&q=american+civil+war+irish+soldier&new=true"
 },
+
 {
 id:"E017",
 title:"Famine Walk",
 date:"1990",
 lat:22,lng:-67,
 category:"commemoration",
-type:"Memory Event",
-desc:"Commemoration of Irish famine and Indigenous suffering.",
-source:"https://www.museum.ie/"
+type:"Diplomatic / Commemorative",
+desc:"Commemorative walk linking Irish famine history and Indigenous suffering.",
+source:"https://www.museum.ie/en-IE/Collections-Research/Folklife-Collections/Folklife-Collections-List-(1)/Other/The-Great-Irish-Famine/An-Gorta-Mor"
 },
+
 {
 id:"E018",
-title:"Éamon de Valera Honorary Chief",
+title:"Eamon de Valera Honorary Chieftain",
 date:"1919",
 lat:34.738,lng:-95.882,
 category:"exchange",
-type:"Symbolic Recognition",
-desc:"Honorary adoption event.",
-source:"https://catalogue.nli.ie/"
+type:"Cultural Exchange",
+desc:"Symbolic adoption event.",
+source:"https://catalogue.nli.ie/Collection/vtls000512255"
 },
+
 {
 id:"E019",
-title:"Trek Reenactment",
+title:"Trek from Mississippi to Oklahoma",
 date:"1992",
 lat:34.738,lng:-95.882,
 category:"commemoration",
-type:"Historical Reenactment",
-desc:"Re-tracing Trail of Tears route.",
-source:"https://www.gov.ie/"
+type:"Diplomatic / Commemorative",
+desc:"Re-enactment of Trail of Tears route.",
+source:"Irish government cultural report",
+primary:"https://www.gov.ie/pdf/choctaw-ireland-1992-visit.pdf"
 },
+
 {
 id:"E020",
 title:"Mansion House Plaque",
 date:"1992",
 lat:53.343,lng:-6.254,
 category:"commemoration",
-type:"Memorial",
-desc:"Plaque honoring Choctaw aid.",
-source:"https://www.dublincity.ie/"
+type:"Diplomatic / Commemorative",
+desc:"Commemorative plaque installation.",
+source:"https://www.dublincity.ie/culture-art-and-film/arts-culture-and-public-spaces/mansion-house"
 },
+
 {
 id:"E021",
-title:"COVID Relief Fund",
+title:"COVID-19 Relief",
 date:"2020–2021",
 lat:53.343,lng:-6.254,
 category:"aid",
-type:"Humanitarian Aid",
-desc:"Pandemic solidarity fundraising.",
-source:"https://www.ireland.ie/"
+type:"Aid / Philanthropy",
+desc:"Irish fundraising response for Navajo/Hopi.",
+source:"https://www.ireland.ie/en/usa/austin/news-and-events/news-archive/covid-19-travel-advice/"
 },
+
 {
 id:"E022",
 title:"Eternal Heart Sculpture",
 date:"2024",
 lat:34.738,lng:-95.882,
 category:"commemoration",
-type:"Monument",
+type:"Diplomatic / Commemorative",
 desc:"Choctaw memorial sculpture.",
-source:"https://www.choctawnation.com/"
+source:"https://www.choctawnation.com/news/news-releases/choctaw-nation-unveils-eternal-heart-sculpture/"
 },
+
 {
 id:"E023",
-title:"Navajo Rug Gift",
+title:"Navajo Hopi Rug Gift",
 date:"2025",
 lat:34.738,lng:-95.882,
 category:"commemoration",
-type:"Cultural Exchange",
-desc:"Reciprocal gift from Navajo & Hopi Nations.",
-source:"https://www.oireachtas.ie/"
+type:"Diplomatic / Commemorative",
+desc:"Reciprocal cultural gift exchange.",
+source:"https://www.oireachtas.ie/en/press-centre/news-and-features/20250717-navajo-rug-gifted-to-the-people-of-ireland-during-leinster-house-visit/"
 }
 ];
 
-/* =========================
-   MARKERS
-========================= */
-
+// MARKERS + FILTERING
 const markers = [];
 
-data.forEach(d => {
-  const m = L.marker([d.lat, d.lng], {
-    icon: icon(d.category)
+data.forEach(item => {
+  const marker = L.marker([item.lat, item.lng], {
+    icon: createIcon(getColor(item.category))
   });
 
-  m.category = d.category;
-
-  m.bindPopup(`
-    <div class="popup-title">${d.title}</div>
-    <div class="popup-meta">${d.type} | ${d.date}</div>
-    <div class="popup-desc">${d.desc}</div>
-    <div style="margin-top:8px;">
-      <a href="${d.source}" target="_blank" rel="noopener">View Source</a>
-    </div>
+  marker.bindPopup(`
+    <strong>${item.title}</strong><br>
+    <em>${item.type}</em><br><br>
+    ${item.desc}<br><br>
+    <strong>Source:</strong><br>
+    <a href="${item.source}" target="_blank">Open Source</a>
   `);
 
-  m.addTo(map);
-  markers.push(m);
+  marker.category = item.category;
+  marker.addTo(map);
+  markers.push(marker);
 });
 
-/* =========================
-   FILTER
-========================= */
+document.getElementById("filter").addEventListener("change", function () {
+  const value = this.value;
 
-document.getElementById("filter").addEventListener("change", e => {
-  const val = e.target.value;
-
-  markers.forEach(m => {
-    if (val === "all" || m.category === val) m.addTo(map);
-    else map.removeLayer(m);
+  markers.forEach(marker => {
+    if (value === "all" || marker.category === value) {
+      marker.addTo(map);
+    } else {
+      map.removeLayer(marker);
+    }
   });
 });
-
 </script>
 
 </body>
