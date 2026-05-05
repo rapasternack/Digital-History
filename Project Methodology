@@ -1,35 +1,37 @@
-Project Methodology
-Due: As part of final submission (May 14)
+# Project Methodology
 
-Length: 2-3 pages
+## Research Question
+How have Irish migration, colonial experiences, and cultural identity shaped their interactions with Indigenous peoples in colonized regions, and how have these relationships influenced ideas of resistance, adaptation, and cultural exchange over time?
 
-Research Question
-[Restate your research question]
+## Historical Context
+This project examines the historical intersections between Irish communities and Indigenous peoples in regions affected by European colonial expansion in modern day United States, particularly during the 18th to 20th centuries. Both groups experienced displacement, cultural suppression, and economic marginalization under imperial systems, though in different contexts and power relations. Irish migration, especially during and after the Great Famine, placed Irish populations within colonial structures in North America, where they often interacted with Indigenous communities. 
+The project addresses the broader historical problem of how colonized or formerly colonized groups relate to Indigenous populations within imperial systems. It explores whether Irish migrants reproduced colonial structures, resisted them, or developed hybrid forms of cultural exchange and solidarity.
 
-Historical Context
-[Brief overview of the historical topic/problem you're addressing]
+# Data and Sources
+## Primary Sources Used
+Library of Congress Digital Collections – https://www.loc.gov/
+National Archives (UK) – https://www.nationalarchives.gov.uk/
+Smithsonian Indigenous Digital Collections – https://www.si.edu/
+Irish Famine Memorial Archives (various institutional records)
+Indigenous oral history and cultural documentation repositories (where publicly available and ethically accessible)
+Historical maps and migration datasets from public domain archives
 
-Data and Sources
-Primary Sources Used
-[List all sources with complete citations]
+# Data Collection Methods
 
-[Source name] - [Citation]
-[Source name] - [Citation]
-Data Collection Methods
-[Explain how you gathered your data:]
+Data was collected through:
+- Manual archival research using digital libraries and institutional databases
+- Curated dataset construction from verified secondary historical scholarship
+- Image sourcing from public domain archives (Library of Congress, Smithsonian, etc.)
+- Cross-referencing historical events across multiple databases to ensure accuracy and relevance
 
-APIs used?
-Web scraping?
-Manual transcription?
-Existing databases?
-Data Preparation
-[Explain cleaning and structuring:]
+The dataset was structured manually into a standardized format of csv/spreadsheet for use in both the timeline and map components of the website.
 
-What transformations did you apply?
-What was removed/standardized?
-What metadata did you add?
-What limitations remain in the data?
-Computational Methods
+I converted raw historical notes into structured entries (date, location, description, source), standardized date formats (YYYY or YYYY-MM-DD where possible), normalized place names for map consistency and condensed long archival descriptions into concise, readable event summaries. 
+I removed duplicate or redundant entries across sources, eliminated ambiguous historical claims and standardized citation format for consistency across dataset entries
+Metadata added was geographic coordinates (for mapping), event categories (migration, conflict, cultural exchange, etc.), source attribution links and thematic tags (colonialism, resistance, displacement)
+Some historical events lack precise dates or geographic specificity. Indigenous perspectives are underrepresented in written colonial archives with archival bias reflecting predominantly European documentation systems. Furthermore, not all regions of Irish–Indigenous interaction are equally documented
+
+# Computational Methods
 Method 1: [e.g., Text Analysis]
 Tools/Libraries: [pandas, NLTK, spaCy, etc.]
 
@@ -110,4 +112,4 @@ Are dependencies specified?
 Future Directions
 [How could this work be extended or improved?]
 
-Note: This methodology should be detailed enough that another researcher could understand and potentially reproduce your work.
+Note: This methodology should be detailed enough that another researcher could understand and potentially reproduce your work
