@@ -1,54 +1,52 @@
-Hist 501D - Final Project
-Student: [Your Name]
-Project Title: [Your Project Title]
-Semester: Spring 2026
-Instructor: Dr. B. Skopyk
+# Hist 501D - Final Project
+- Student: Rachel Pasternack
+- Project Title: Irish-Indigenous Interactions
+- Semester: Spring 2026
+- Instructor: Dr. B. Skopyk
 
-Project Overview
-[Brief description of your project - update this as your project develops]
+# Project Overview
+This project is a digital history website that explores the historical relationships between Irish people and Indigenous peoples in the United States. Through an interactive timeline and map, the project visualizes key events, movements, and moments of contact from the 18th through 20th centuries. By combining spatial and chronological analysis with archival sources, the project highlights patterns of migration, colonial participation, cultural exchange, and resistance. The goal is to present a relational understanding of history that moves beyond isolated narratives and instead emphasizes interconnected global experiences.
 
-Research Question: [Your historical research question]
+# Research Question 
+How have Irish migration, colonial experiences, and cultural identity shaped their interactions with Indigenous peoples in colonized regions, and how have these relationships influenced ideas of resistance, adaptation, and cultural exchange over time?
 
-DH Methods: [Computational methods you're using: text analysis, mapping, network analysis, etc.]
+# DH Methods: 
+- Digital mapping (spatial analysis using interactive web maps)
+- Timeline visualization (chronological structuring of historical events)
+- Dataset construction and curation
+- Archival integration (embedding primary sources and images)
+- Public-facing digital design
 
-Repository Structure
+# Repository Structure
+
 project/
-├── docs/              Documentation files
-│   ├── proposal.md
-│   ├── methodology.md
-│   ├── data-sources.md
-│   ├── sustainability-plan.md
-│   └── reflection.md
-├── data/              Raw and processed data
-│   ├── raw/
-│   └── processed/
-├── notebooks/         Jupyter notebooks for analysis
-├── website/           GitHub Pages site files
-│   ├── index.html
-│   ├── css/
-│   └── js/
-└── README.md          This file
-Project Deliverables
-Week 4 (Feb 16)
- Project Proposal & Literature Review (docs/proposal.md)
-Week 7 (Mar 9)
- Data Collection/Creation Plan (docs/data-sources.md)
-Week 10 (Apr 13)
- Project Prototype/MVP Presentation (5 min in class)
-Finals Week (May 14)
- Complete project (website or notebooks)
- Full documentation (methodology, sources, sustainability plan)
- Reflective essay (1500-2000 words)
- Public-facing description (500 words)
-Live Project
-[Add link to your GitHub Pages site once it's live]
 
-License
-[Choose a license for your work: CC-BY, CC-BY-NC, etc.]
+- ├── Project Overview.md/  
+- ├── images/  
+- ├── Project Methodology.md/  
+- ├── Public Description.md/  
+- ├── Reflective Essay.md/  
+- ├── database.html/  
+- ├── index.html/  
+- ├── map.html/  
+- ├── methods.html/
+- ├── sustainability.html/ 
+- ├── timeline.html/
+- ├── style.css/ 
+- └── README.md          
 
-Contact
-[Your email]
+# Live Project
+https://rapasternack.github.io/Irish-Indigenous-Interactions/
 
-Acknowledgments
-Dr. B. Skopyk, Hist 501D
-[Any other acknowledgments: data sources, libraries used, etc.]
+# License
+This project is licensed under the Creative Commons Attribution-NonCommercial (CC BY-NC 4.0) license.
+
+# Contact
+rapasternack413@gmail.com
+
+# Acknowledgments
+- Dr. B. Skopyk and the HIST 501D Class
+- Library of Congress Digital Collections
+- Smithsonian Institution Digital Archives
+- National Archives (UK)
+- The Choctaw, Hopi, and Navajo Nations
