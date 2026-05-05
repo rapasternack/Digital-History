@@ -12,6 +12,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
+<script id="z2x7af">
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+  sections.forEach(section => {
+    const top = section.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      section.classList.add('visible');
+    }
+  });
+});
+</script>
+
 <body>
 
 <!-- NAVBAR -->
@@ -50,11 +63,11 @@
   <div class="container">
     <h2>Introduction</h2>
     <p>
-      In 1847, during the Great Irish Famine, the Choctaw Nation, who were still recovering from forced removal along the Trail of Tears, sent aid to Ireland. Despite their own hardship, they raised $170 to support famine relief across the Atlantic.
+      In 1847, during the midst of the Great Irish Famine, the Choctaw Nation, who were still recovering from forced removal along the Trail of Tears, sent aid to Ireland. Despite their own hardship, they raised $170 to support famine relief across the Atlantic.
     </p>
 
     <p>
-      This project explores Irish–Indigenous interactions beyond this moment, examining shared histories of colonialism, migration, memory, and solidarity.
+      What does it mean for two colonized people to recognize each other across an ocean? This project explores Irish–Indigenous interactions beyond this moment, examining shared histories of colonialism, migration, memory, and solidarity.
     </p>
   </div>
 </section>
@@ -79,6 +92,11 @@
       <div class="card">
         <h3>Memory & Commemoration</h3>
         <p>These histories continue through memorials and global connections today.</p>
+      </div>
+
+               <div class="card">
+        <h3>Complicated Interactions</h3>
+        <p>However, Irish immigrants in North America were participants of settler colonialism that displaced Indigenous people.</p>
       </div>
 
     </div>
