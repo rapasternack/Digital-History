@@ -32,7 +32,7 @@ Metadata added was geographic coordinates (for mapping), event categories (migra
 Some historical events lack precise dates or geographic specificity. Indigenous perspectives are underrepresented in written colonial archives with archival bias reflecting predominantly European documentation systems. Furthermore, not all regions of Irish–Indigenous interaction are equally documented
 
 # Computational Methods
-Method 1: Timeline-Based Historical Structuring
+## Method 1: Timeline-Based Historical Structuring
 
 Tools/Libraries: HTML, JavaScript, JSON dataset structure
 
@@ -46,7 +46,7 @@ Process:
 Rationale:
 A timeline format allows users to understand historical causality and sequence, highlighting long-term patterns in Irish migration and Indigenous interaction.
 
-Method 2: Digital Mapping (Spatial History Analysis)
+## Method 2: Digital Mapping
 
 Tools/Libraries: Leaflet.js, GeoJSON data
 
@@ -60,13 +60,13 @@ Process:
 Rationale:
 Mapping enables spatial analysis of historical interactions, showing how migration and colonial systems operated across geography rather than isolated events.
 
-Software and Dependencies:
-Programming Language: JavaScript, HTML5, CSS3, Python 3.12
-Kwy Libraries: Leaflet.js (mapping), pandas 2.x (data manipulation), matplotlib 3.x (visualization)
-Data Format: JSON / GeoJSON
-Styling: Custom CSS
-Hosting: GitHub Pages
-Environment: Virtual Kernel on VSCode
+# Software and Dependencies:
+- Programming Language: JavaScript, HTML5, CSS3, Python 3.12
+- Key Libraries: Leaflet.js (mapping), pandas 2.x (data manipulation), matplotlib 3.x (visualization)
+- Data Format: JSON / GeoJSON
+- Styling: Custom CSS
+- Hosting: GitHub Pages
+- Environment: Virtual Kernel on VSCode
 
 # Analysis Process
 Data Loading: Historical data was manually embedded into structured JSON files and loaded into the timeline and map systems.
@@ -85,7 +85,7 @@ Validation: Cross-referenced multiple historical sources, verified dates and loc
 
 Interpretation: Quantitative structure (such as the timeline or map) was interpreted through historical reasoning and emphasizing narrative connections.
 
-Visualization and Presentation: The project uses interactive timeline for chronological storytelling, digital map for spatial visualization, image integration for archival context and a card-based layout design for readability. Design principles included high contrast for accessibility, a minimalist aesthetic to emphasize on readability over decorative complexity, and have a n interactive engagement 
+Visualization and Presentation: The project uses interactive timeline for chronological storytelling, digital map for spatial visualization, image integration for archival context and a card-based layout design for readability. Design principles included high contrast for accessibility, a minimalist aesthetic to emphasize on readability over decorative complexity, and have an interactive engagement 
 
 # Limitations and Caveats
 Data Limitations:
@@ -101,11 +101,11 @@ Technical Limitations
 - Browser-based visualization constraints
 - Limited dataset size due to manual curation
 
-Validation and Verification
+# Validation and Verification
 I cross-checked sources across multiple archives, verified historical consistency using academic secondary literature and manually reviewed dataset entries for accuracy and clarity
 
 # Reproducibility
-Yes! All code is available in the GitHub repository:
+All code is available in the GitHub repository:
 https://github.com/rapasternack/Irish-Indigenous-Interactions
 
 The dataset is embedded in structured JSON format within the project files. Dependencies are limited to standard front-end web technologies (HTML/CSS/JavaScript) There is no proprietary software is required to reproduce the project
