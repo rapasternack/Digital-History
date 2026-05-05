@@ -1,6 +1,13 @@
-# Irish-Indigenous Interactions
+# Irish-Indigenous Interactions / HIST501D Final Project
+Spring 2026 / Dr. B. Skopyk
 
-**An interactive digital history project exploring connections between Irish and Indigenous nations, with a focus on memory, mapping, and archives. This project uses digital tools such as mapping and archival curation, to explore transnational histories of solidarity and reframe how Indigenous and Irish histories intersect across space and time.**
+**An interactive digital history project exploring connections between Irish people and Indigenous communities, with a focus on memory, mapping, and archives. This project examines historical and cultural interactions between the two groups, focusing on themes of migration, colonialism, identity, and cross-cultural exchange. It uses a digital timeline, map, and database to connect events, places, and sources to show how these interactions developed over time and shaped both Irish and Indigenous histories.**
+
+# Historical Research Question
+
+How have Irish migration, colonial experiences, and cultural identity shaped their interactions with Indigenous peoples in colonized regions, and how have these relationships influenced ideas of resistance, adaptation, and cultural exchange over time?
+
+# Digital History Methods
 
 ## Live Site
 https://rapasternack.github.io/Digital-History/
