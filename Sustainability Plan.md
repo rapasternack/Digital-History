@@ -1,9 +1,5 @@
 # Sustainability Plan
 
-**Due**: Draft by April 20, Final by May 14
-
-**Length**: 1-2 pages
-
 ## Technical Sustainability
 
 ### Hosting
@@ -11,7 +7,9 @@
 **Current hosting**: GitHub Pages
 
 **Long-term plan**:  
-After the semester ends, the project will remain publicly accessible via GitHub Pages as long as the repository is maintained. Over the next five years, the site will ideally remain live in its current form as a static digital humanities project. If any active maintenance stops, the stie will still function as an archived resource due to the use of HTML and CSS
+After the semester ends, the project will remain publicly accessible through GitHub Pages as a static digital humanities site. Because the project is built using HTML and CSS, it does not rely on complex infrastructure and can function long-term as a stable, low-maintenance resource.
+
+In alignment with the project’s focus on continuity and preservation, the site is designed to exist not only as an active project but also as an archival record of research. Even if active updates stop, the site will remain usable as a static scholarly resource documenting Irish–Indigenous interactions and their ongoing legacy.
 
 **Costs**:  
 The are no hosting fees for GitHub Pages and therefore the project is free to host, with no anticipated financial needs.
@@ -28,6 +26,7 @@ pandas 2.x
 matplotlib 3.x
 HTML5
 CSS3
+JavaScript
 ```
 
 **Version management**:  
@@ -38,7 +37,7 @@ Due to the main site being static, there is minimal dependency risk. If any exte
 
 ### Code and Data Preservation
 
-**Code repository**: GitHub - https://github.com/rapasternack/Digital-History
+**Code repository**: GitHub - https://github.com/rapasternack/Irish-Indigenous-Interactions
 
 **Backup locations**:  
 Local copies on personal computer. There is potiental future backup in institutional repositories like Binghamton.
@@ -74,9 +73,9 @@ Users must credit the project creator and cite any referenced sources (as all ex
 
 ### Who maintains this?
 
-**During semester**: Me
+**During semester**: Rachel Pasternack
 
-**After May 2026**: Likely will be maintained as an archived project with potiental for occasional updates from me. 
+**After May 2026**: The project will primarily exist as an archived resource, with the possibility of occasional updates. Its design prioritizes long-term accessibility over continuous maintenance.
 
 ### Update frequency
 
@@ -100,7 +99,6 @@ Data may be reused for research or educational purposes with proper attribution!
 Can include: expanded datasets, additional events, interactivity with the map, timeline, or database, integration with other databases, enhanced accessibility features
 
 ### Collaboration opportunities
-
 Future contributors can create a new branch on the repository and submit changes or expansions
 
 ## Archive Plan
@@ -137,4 +135,4 @@ If the site goes offline, a redirect or notice will explain where the archived v
 I commit to maintaining this project until May 2026. After that, I will preserve and archive the project according to the plan above to ensure the continued access for future users.
 
 **Signed**: Rachel Pasternack 
-**Date**: April 15, 2026
+**Date**: May 10, 2026
