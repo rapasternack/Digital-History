@@ -241,7 +241,6 @@ nav {
 
   background: var(--surface);
   padding: 24px;
-  border-radius: var(--radius-md);
   box-shadow: var(--shadow);
 }
 
@@ -263,8 +262,6 @@ nav {
   width: 160px;
   height: 110px;
   object-fit: cover;
-  border-radius: var(--radius-sm);
-  border: 2px solid #111;
   display: block;
 }
 
