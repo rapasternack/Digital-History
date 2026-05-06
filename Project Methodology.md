@@ -8,13 +8,187 @@ This project examines the historical intersections between Irish communities and
 The project addresses the broader historical problem of how colonized or formerly colonized groups relate to Indigenous populations within imperial systems. It explores whether Irish migrants reproduced colonial structures, resisted them, or developed hybrid forms of cultural exchange and solidarity.
 
 # Data and Sources
-## Primary Sources Used
-Library of Congress Digital Collections – https://www.loc.gov/
-National Archives (UK) – https://www.nationalarchives.gov.uk/
-Smithsonian Indigenous Digital Collections – https://www.si.edu/
-Irish Famine Memorial Archives (various institutional records)
-Indigenous oral history and cultural documentation repositories (where publicly available and ethically accessible)
-Historical maps and migration datasets from public domain archives
+# Primary Sources (Grouped by Category/How to Access)
+## Source 1: Library of Congress Collections (Treaties, Newspapers, Relief Records)
+
+Full Citation:
+- George W. Harkins. “Farewell Letter to the American People.” 1832. Reprinted in *Arkansas Gazette*, 1832. Accessed via Library of Congress, Chronicling America.
+- General Relief Committee of the City of New York. *Report for the Relief of the Suffering Poor in Ireland.* New York, 1848. Accessed via Library of Congress and HathiTrust.
+- Boston Irish Relief Committee. *Report of the Boston Irish Relief Committee. Boston*, 1847; Philadelphia Irish Relief Committee. *Report of the Philadelphia Irish Relief Committee.* Philadelphia, 1847. Accessed via American Antiquarian Society and Library of Congress.
+- *Arkansas Intelligencer.* 1847. Issues referencing Choctaw donation. Accessed via Library of Congress, *Chronicling America.*
+
+Location/Access:
+Library of Congress Digital Collections (Chronicling America)
+
+Copyright Status:
+Public domain
+
+Format:
+Digitized newspapers, pamphlets, and government-related documents
+
+Quantity:
+Multiple documents across collections
+
+## Source 2: Irish Famine Newspaper Coverage (1845–1850)
+
+Full Citation:
+- Freeman’s Journal (Dublin), 1845–1850.
+- The Nation (Dublin), 1845–1850.
+
+Location/Access:
+National Library of Ireland, Irish Newspaper Archives
+
+Copyright Status:
+Public domain
+
+Format:
+Digitized newspaper scans
+
+Quantity:
+Selected issues
+
+## Source 3: U.S. Government Documents
+
+Full Citation:
+- United States Congress. *American State Papers: Indian Affairs.* 2 vols. Washington, DC: Gales and Seaton, 1832. Accessed via Library of Congress and HathiTrust.
+- United States. Bureau of Indian Affairs. *Annual Reports of the Commissioner of Indian Affairs,* 1845–1850. Washington, DC: Government Printing Office.
+
+Location/Access:
+Library of Congress; National Archives; HathiTrust
+
+Copyright Status:
+Public domain
+
+Format:
+Digitized federal reports and printed volumes
+
+Quantity:
+Select volumes and reports
+
+## Source 4: British and Irish Archival Collections
+
+Full Citation:
+Archival materials relating to Irish famine and colonial administration
+
+Location/Access:
+- British Library. Irish famine and colonial records collections. London.
+- The National Archives (UK). Colonial Office Records relating to Ireland and Indigenous policy, 19th century.
+
+Copyright Status:
+Public domain (for historical materials)
+
+Format:
+Manuscripts, administrative records, newspapers
+
+Quantity:
+Select documents
+
+## Source 5: Choctaw Nation Historical Records
+
+Full Citation:
+- Choctaw Nation of Oklahoma. Council records, famine relief documentation, and cultural archives, 19th century.
+
+Location/Access:
+Choctaw Nation archives; partnered digital collections
+
+Copyright Status:
+Public domain (historical records); some materials may require permission
+
+Format:
+Manuscripts, records, archival documents
+
+Quantity:
+Selected documents
+
+## Source 6: Hargett Choctaw Collection
+
+Full Citation:
+- J. L. Hargett. *Choctaw Nation Papers*, 19th century. Manuscripts and Archives, Yale University Library.
+
+Location/Access:
+Yale University Library
+
+Copyright Status:
+Public domain
+
+Format:
+Manuscripts, correspondence, financial records
+
+Quantity:
+Selected materials
+
+## Source 7: Indigenous Nation Contemporary Records
+
+Full Citation:
+- Navajo Nation. COVID-19 mutual aid records and public communications, 2020–2021.
+- Native Land Digital. *Native Land Digital Map.* Accessed 2026. https://native-land.ca
+
+Location/Access:
+Official tribal and project websites
+
+Copyright Status:
+Public domain
+
+Format:
+Digital records, datasets, maps
+
+Quantity:
+Selected examples
+
+## Source 8: Irish Institutional and Cultural Sources
+
+Full Citation:
+Materials documenting remembrance and commemoration of the Choctaw donation
+
+Location/Access:
+- Oireachtas. Parliamentary records and public statements on Irish–Choctaw relations.
+- National Museum of Ireland. Exhibits and interpretive materials on the Irish Famine.
+- Dublin City Council. Public commemorations and cultural heritage materials.
+- Irish Famine Archive. Digital collections related to famine history.
+
+Copyright Status:
+Public domain
+
+Format:
+Public history materials, reports, and digital exhibits
+
+Quantity:
+Selected sources
+
+## Source 9: Digital Collections
+
+Full Citation:
+- Digital Public Library of America (DPLA). Aggregated digital archival collections. https://dp.la
+
+Location/Access:
+Online database
+
+Copyright Status:
+Varies by item, most are public domain
+
+Format:
+Digitized archival materials
+
+Quantity:
+Supplementary sources
+
+# Secondary Scholarship
+## Source 10: Scholarly Interpretations
+
+Full Citation:
+- Darrell A. Posey, ed. *Indigenous Peoples and Sustainability.* Nairobi: United Nations Environment Programme, 1999.
+
+Location/Access:
+Academic journals and books
+
+Copyright Status:
+Copyrighted
+
+Format:
+Articles and monographs
+
+Quantity:
+Select works
 
 # Data Collection Methods
 
@@ -32,84 +206,87 @@ Metadata added was geographic coordinates (for mapping), event categories (migra
 Some historical events lack precise dates or geographic specificity. Indigenous perspectives are underrepresented in written colonial archives with archival bias reflecting predominantly European documentation systems. Furthermore, not all regions of Irish–Indigenous interaction are equally documented
 
 # Computational Methods
-Method 1: [e.g., Text Analysis]
-Tools/Libraries: [pandas, NLTK, spaCy, etc.]
+## Method 1: Timeline-Based Historical Structuring
+
+Tools/Libraries: HTML, JavaScript, JSON dataset structure
 
 Process:
 
-[Step 1]
-[Step 2]
-[Step 3]
-Rationale: [Why this method for this question?]
+1. Historical events were compiled into a structured dataset
+2. Each entry was assigned a date, location, and description
+3. Events were rendered chronologically in a digital timeline interface
+4. Users can scroll and visually track historical development over time
 
-Method 2: [e.g., Network Analysis]
-[Repeat structure for each method used]
+Rationale:
+A timeline format allows users to understand historical causality and sequence, highlighting long-term patterns in Irish migration and Indigenous interaction.
 
-Software and Dependencies
-Programming Language: Python 3.12 (or specify version)
+## Method 2: Digital Mapping
 
-Key Libraries:
+Tools/Libraries: Leaflet.js, GeoJSON data
 
-pandas 2.x - Data manipulation
-matplotlib 3.x - Visualization
-[other libraries] - [purpose]
-Environment: [How to reproduce? requirements.txt? conda environment?]
+Process:
 
-AI Tools Used
-[If you used AI assistance, document it here:]
+1. Historical locations were assigned latitude and longitude coordinates
+2. Events were converted into GeoJSON format
+3. Data points were plotted on an interactive digital map
+4. Popups provide historical context, images, and citations
 
-GitHub Copilot:
+Rationale:
+Mapping enables spatial analysis of historical interactions, showing how migration and colonial systems operated across geography rather than isolated events.
 
-Used for: [specific tasks]
-How it helped: [description]
-ChatGPT/Claude:
+# Software and Dependencies:
+- Programming Language: JavaScript, HTML5, CSS3, Python 3.12
+- Key Libraries: Leaflet.js (mapping), pandas 2.x (data manipulation), matplotlib 3.x (visualization)
+- Data Format: JSON / GeoJSON
+- Styling: Custom CSS
+- Hosting: GitHub Pages
+- Environment: Virtual Kernel on VSCode
 
-Used for: [specific tasks]
-How it helped: [description]
-Analysis Process
-[Walk through your analytical workflow step by step]
+# Analysis Process
+Data Loading: Historical data was manually embedded into structured JSON files and loaded into the timeline and map systems.
 
-Data Loading: [How you loaded and validated data]
-Exploratory Analysis: [Initial investigations]
-Primary Analysis: [Core computational work]
-Validation: [How you checked results]
-Interpretation: [How you moved from numbers to historical insights]
-Visualization and Presentation
-[Explain your visualization choices:]
+Exploratory Analysis: Initial review focused on identifying recurring themes such as:
+- Colonial displacement
+- Migration patterns
+- Cross-cultural interaction
+- Resistance narratives
+  
+Primary Analysis: The main analytical approach was qualitative and digital:
+- Events were grouped by theme and geography
+- Patterns of interaction were identified through visual comparison on map and timeline interfaces
+  
+Validation: Cross-referenced multiple historical sources, verified dates and locations using institutional archives, and checked consistency between timeline and map datasets
 
-What types of visualizations did you create?
-Why these types?
-What design principles guided your choices?
-Limitations and Caveats
-[Be honest about what your methods can and cannot tell you:]
+Interpretation: Quantitative structure (such as the timeline or map) was interpreted through historical reasoning and emphasizing narrative connections.
 
+Visualization and Presentation: The project uses interactive timeline for chronological storytelling, digital map for spatial visualization, image integration for archival context and a card-based layout design for readability. Design principles included high contrast for accessibility, a minimalist aesthetic to emphasize on readability over decorative complexity, and have an interactive engagement 
+
+# Limitations and Caveats
 Data Limitations:
+- Incomplete archival records for Indigenous perspectives
+- Uneven geographic documentation
+- Reliance on colonial-era written sources
 
-Gaps in sources?
-Sampling bias?
-OCR errors?
 Methodological Limitations:
+- Cannot fully represent lived Indigenous experiences
+- Historical interpretation influenced by available Western archives
 
-Assumptions made?
-What's lost in quantification?
-Alternative interpretations?
-Technical Limitations:
+Technical Limitations
+- Browser-based visualization constraints
+- Limited dataset size due to manual curation
 
-Computational constraints?
-Software limitations?
-Validation and Verification
-[How did you ensure accuracy?]
+# Validation and Verification
+I cross-checked sources across multiple archives, verified historical consistency using academic secondary literature and manually reviewed dataset entries for accuracy and clarity
 
-Spot-checking results?
-Comparing to existing scholarship?
-Peer review?
-Reproducibility
-[Can someone else reproduce your work?]
+# Reproducibility
+All code is available in the GitHub repository:
+https://github.com/rapasternack/Irish-Indigenous-Interactions
 
-Is code documented?
-Is data available (or instructions for obtaining it)?
-Are dependencies specified?
-Future Directions
-[How could this work be extended or improved?]
+The dataset is embedded in structured JSON format within the project files. Dependencies are limited to standard front-end web technologies (HTML/CSS/JavaScript) There is no proprietary software is required to reproduce the project
 
-Note: This methodology should be detailed enough that another researcher could understand and potentially reproduce your work
+# Future Directions
+People could:
+- Expand dataset to include more Indigenous-authored sources
+- Integrate oral histories and audio archives
+- Improve geospatial precision with advanced GIS tools
+- Include comparative colonial case studies 

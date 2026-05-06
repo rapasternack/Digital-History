@@ -1,81 +1,23 @@
-Public-Facing Project Description
-Due: May 14 (Finals Week)
+# Irish-Indigenous Interactions
+Rachel Pasternack - Binghamton University, Spring 2026
 
-Length: Approximately 500 words
+This project explores the historical relationships between Irish and Indigenous peoples in the United States. While these histories are often studied separately, this project brings them together to ask how Irish migration and colonial experience influenced interactions with Indigenous communities, and what those interactions reveal about power, identity, and resistance.
 
-Purpose: This description is suitable for your CV, portfolio website, job applications, or conference proposals.
+The central question guiding this work is: *How did Irish migrants, themselves shaped by British colonial rule, participate in, challenge, or adapt to colonial systems that impacted Indigenous peoples?* This question matters because it complicates simplified narratives of oppression and identity. Irish migrants were not only victims of colonialism but also participants in settler societies, creating layered and sometimes contradictory relationships with Indigenous communities.
 
-[Project Title]
-[Your Name]
-Binghamton University, Spring 2026
+To investigate this, I built an interactive digital history website that combines a timeline, a map, and a database to visualize key events from the 18th through 20th centuries. The project allows users to explore where and when Irish–Indigenous interactions occurred, including moments of migration, conflict, cultural exchange, and solidarity. Each entry includes historical context, images, and links to archival sources, making the project both an analytical tool and a public-facing educational resource.
 
-[Write a polished, accessible description of your project that a non-specialist could understand. This should be suitable for showing hiring committees, grad school admissions, or the general public.]
+Rather than relying solely on traditional narrative writing, this project uses digital methods to uncover patterns that are difficult to see in isolation. By mapping historical events geographically, the project reveals how Irish migration intersected with Indigenous lands across North America and beyond. The timeline highlights how these interactions changed over time, showing both continuity and transformation. Together, these tools allow users to see connections across space and time, rather than viewing events as disconnected incidents.
 
-The Historical Question
-[What historical problem or question does your project address? Why does it matter?]
+The project’s findings suggest that Irish–Indigenous interactions were complex and varied. In some cases, Irish migrants participated in colonial expansion and settlement, contributing to Indigenous displacement. In others, shared experiences of marginalization created opportunities for cultural exchange or expressions of solidarity. These patterns demonstrate that identity in colonial contexts was not fixed but shaped by shifting social, political, and economic conditions.
 
-[Write for a general educated audience, not just historians. Avoid jargon.]
+This work contributes to historical scholarship by offering a more relational understanding of colonial history, which recognizes overlapping experiences rather than isolated narratives. Methodologically, it demonstrates how digital tools like mapping and timelines can enhance historical analysis by making patterns visible and accessible.
 
-What You Built
-[Describe your project in concrete terms]
+Beyond academia, the project has public value as an accessible digital exhibit. It is designed for students, educators, and general audiences interested in migration, colonial history, and Indigenous studies. By presenting complex histories in an interactive format, the project encourages users to engage critically with the past and consider how these histories continue to shape the present.
 
-[Examples:]
+# Technologies Used
+HTML, CSS, JavaScript, Leaflet.js (mapping), JSON/GeoJSON data structuring
 
-"An interactive map visualizing..."
-"A data-driven analysis of..."
-"A digital archive containing..."
-"A network visualization revealing..."
-Methods and Approach
-[Explain your computational methods in accessible language]
-
-[Don't say: "I used TF-IDF vectorization and cosine similarity clustering"] [Instead: "I used computational text analysis to identify distinctive themes across 500 historical documents"]
-
-Key Findings
-[What did you discover? What new insights does your project offer?]
-
-[Be specific. Quantify if possible.]
-
-Significance
-[Why should someone care about this project?]
-
-Historical contribution:
-[What does it add to our understanding of this period/topic?]
-
-Methodological innovation:
-[What's distinctive about your approach?]
-
-Public value:
-[Who benefits from this work?]
-
-Technologies Used
-[List tools/methods briefly - but don't make this the focus]
-
-[Examples: Python, pandas, Leaflet.js, network analysis, NLP]
-
-Access
-View the project: [URL to live project]
-Code repository: [GitHub URL]
-
-Usage Examples
-For your CV:
-
-Digital History Project: [Title]
-- Created [type of project] analyzing [sources] to investigate [question]
-- Technologies: Python, pandas, Leaflet.js
-- View project: [URL]
-For job application cover letter:
-
-"My digital history project on [topic] demonstrates my ability to [skills]. 
-Using [methods], I analyzed [sources] to reveal [finding]. This project 
-showcases both my historical research skills and my computational literacy."
-For conference proposal (if you want to present this work):
-
-[Your description above can form the basis of a conference abstract]
-Grading Note
-This will be evaluated on:
-
-Clarity for general audience (40%)
-Compelling presentation (30%)
-Accurate representation of work (20%)
-Professional polish (10%)
-Tip: Show this to a friend outside your field. Can they understand what you did and why it matters?
+# Access
+- View the project: https://rapasternack.github.io/Irish-Indigenous-Interactions/
+- Code repository: https://github.com/rapasternack/Irish-Indigenous-Interactions

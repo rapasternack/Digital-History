@@ -1,134 +1,17 @@
-Reflective Essay
-Due: May 14 (Finals Week)
+# Reflective Essay 
 
-Length: 1500-2000 words
+At the start of this semester, I set out to explore a historical question that felt both complex and underexamined: how Irish migrants, shaped by their own experiences under British colonialism, interacted with Indigenous peoples in colonized regions. I was interested in moving beyond simplified narratives that cast groups as either purely oppressed or purely complicit. Instead, I wanted to understand how identity, power, and colonial systems overlapped in ways that produced complicated and sometimes contradictory relationships. This question was especially compelling to me because it challenges binary ways of thinking about history and instead emphasizes ambiguity, tension, and context. To answer this question, I developed a digital history project titled *Irish–Indigenous Interactions*, which takes the form of an interactive website. My goal was not only to present historical information but to use digital tools to uncover patterns across time and space that would be difficult to see through traditional narrative methods alone. I wanted users to be able to explore history dynamically, rather than passively reading a linear argument. Over the course of the semester, this project became both a research exercise and a process of learning how digital methods can reshape historical inquiry. It also pushed me to think about how historians communicate knowledge and how digital platforms can make that knowledge more accessible.
 
-Instructions
-This essay should be a thoughtful reflection on your digital history methodology, process, and learning this semester. Write in first person. Be honest about what worked, what didn't, and what you learned.
+The primary digital history methods I used were timeline visualization, digital mapping, and dataset construction. I chose these methods because my research question depended on identifying patterns across both geography and time. A traditional essay might allow me to describe individual cases in depth, but it would be much harder to show how Irish–Indigenous interactions unfolded across multiple regions and decades in a cohesive and comparative way. Mapping allowed me to spatially situate historical events, showing where interactions occurred and how Irish migration intersected with Indigenous lands. The timeline, on the other hand, helped me organize events chronologically, making it easier to trace continuity, change, and moments of rupture over time. Together, these methods created a layered form of analysis. Users can see both when and where events happened, and how they relate to one another across different contexts. This dual structure helped me move beyond isolated case studies and instead identify broader historical patterns. I learned these methods primarily through a combination of course materials and trial and error. While I had some basic familiarity with HTML and CSS from class, I had never built an interactive map or structured a dataset for a digital humanities project before. Much of my learning came from experimentation which meant trying something, breaking it, and then figuring out how to fix it. This iterative process was often frustrating, especially when small errors caused major issues, but it ultimately helped me understand not just how the tools worked, but why they mattered for historical analysis.
 
-Your Essay (replace this section with your writing)
-Introduction
-[Introduce your project and research question. What did you set out to do?]
+One of the biggest successes of the project was the way the combination of mapping and timeline visualization revealed patterns that I would not have noticed otherwise. For example, plotting events geographically made it clear that Irish migration consistently overlapped with frontier or colonial zones, where Indigenous displacement was actively occurring. This spatial relationship became much more obvious when visualized on a map than it would have been in a written narrative. Seeing these overlaps visually reinforced the idea that Irish migrants were not simply moving into empty spaces but into areas already shaped by Indigenous presence and colonial conflict. Another important success was the process of building and curating the dataset itself. By structuring historical events into standardized entries with dates, locations, and categories, I was forced to think more critically about how different events related to one another. This process required making interpretive decisions about what counted as an “interaction,” how to categorize events, and how to represent complex historical moments in concise descriptions. These decisions were not neutral—they shaped the way the data could be analyzed and visualized. As a result, I became much more aware of how data construction is itself a form of historical interpretation. From a technical perspective, I am most proud of successfully building a cohesive, visually consistent website that integrates multiple components. Early in the semester, I struggled with basic layout and styling issues, and even small design changes could feel overwhelming. By the end of the project, however, I was able to create a site that feels polished and intentional, with a clear visual identity and user-friendly navigation. This reflects significant growth in my front-end development skills, as well as my ability to think about design as part of the interpretive process rather than just an aesthetic concern.
 
-Methodological Choices
-[Discuss the DH methods you chose and why]
+At the same time, the project involved several challenges, both technical and historical. On the technical side, one of the biggest difficulties was getting different parts of the site to work together smoothly. For example, ensuring that the dataset displayed correctly across both the timeline and the map required careful formatting and consistency. Small errors in the data structure, such as missing fields or incorrect formatting, could break entire sections of the site, which made debugging time-consuming and sometimes frustrating. This experience taught me the importance of precision and consistency in working with structured data. Another challenge was learning how to balance design and functionality. At times, I focused too much on making the site visually appealing, which slowed down progress on the underlying data and analysis. I would spend long periods adjusting fonts, colors, or layout details instead of focusing on whether the content itself was complete and accurate. Eventually, I had to shift my priorities and focus on getting the core features working before refining the design. This was an important lesson in project management and in recognizing the difference between essential and secondary tasks. 
 
-What methods did you use?
-[Text analysis? Mapping? Network analysis? Visualization?]
+Historically, one of the biggest challenges was the uneven availability of sources. Indigenous perspectives are often underrepresented in written archives, which meant that much of the data reflects colonial viewpoints. This created a tension in the project: while I wanted to highlight Indigenous experiences, I was limited by the types of sources available. In many cases, Indigenous voices appeared indirectly or were filtered through colonial documentation. To address this, I made an effort to acknowledge these limitations and include Indigenous-focused archives where possible. However, this challenge also made me more aware of the ethical dimensions of historical research and the importance of critically engaging with sources. Time management was another significant issue. I initially underestimated how long it would take to build and refine the project, especially the technical components. As deadlines approached, I realized that I needed to narrow the scope of my dataset and focus on a smaller number of well-developed entries rather than trying to include everything. While this was a difficult decision, it ultimately improved the quality of the project by allowing me to focus on depth rather than breadth.
 
-Why these methods?
-[What made them appropriate for your historical question?]
+One of the most important things I learned from this project is how computational methods can change the way we see historical data. By organizing events into a structured dataset and visualizing them, I was able to identify patterns that would be difficult to detect through close reading alone. For example, the act of mapping events highlighted the geographic concentration of Irish–Indigenous interactions in specific colonial regions. This spatial clustering suggested that these interactions were not random but tied to broader systems of migration, settlement, and imperial expansion. Visualization also prompted new questions. Seeing events grouped together made me wonder about connections that I had not initially considered, such as whether similar patterns existed in other colonial contexts or how these interactions compared across different regions. In this way, the digital tools did not just help answer my research question but they also helped generate new ones. At the same time, this project made it clear that computational methods have limits. They can reveal patterns and relationships, but they cannot fully capture the complexity of human experience. Important aspects of history, such as emotion, cultural meaning, and individual perspective, are difficult to quantify and risk being lost in structured data. This reinforced the idea that digital methods should complement, rather than replace, traditional historical analysis. 
 
-How did you learn them?
-[Course materials? External tutorials? Trial and error?]
+If I were to start this project again, I would make several changes. First, I would spend more time planning the dataset structure before beginning development. This would save time later by reducing the need for reformatting and debugging. I would also narrow the scope earlier in the process. Initially, I tried to include too many events, which made the project harder to manage and less focused. Starting with a smaller, more clearly defined dataset would have allowed for deeper analysis and a more streamlined workflow. In terms of learning strategy, I would prioritize mastering one tool, such as mapping, before trying to integrate multiple components. This would make the learning process more manageable and reduce the feeling of being overwhelmed. I would also build in more time for testing and iteration, rather than trying to complete everything at once.
 
-What Worked Well
-[Discuss successes and positive experiences]
-
-Technical successes:
-[What computational methods yielded interesting results?]
-
-Historical insights:
-[What did you discover that you might not have found through traditional methods?]
-
-Skill development:
-[What did you learn that you're proud of?]
-
-Challenges and How You Addressed Them
-[Be honest about difficulties]
-
-Technical challenges:
-[Bugs? Learning curves? Data problems?]
-
-Historical challenges:
-[Source availability? Interpretive difficulties?]
-
-Time management:
-[Scope issues? Deadlines?]
-
-How you responded:
-[What strategies helped you overcome obstacles?]
-
-Role of AI in Your Work
-[Reflect on AI assistance]
-
-How you used AI:
-[GitHub Copilot? ChatGPT? For what tasks?]
-
-Benefits:
-[How did AI speed up or improve your work?]
-
-Limitations:
-[When did AI not help? When did you code/think manually?]
-
-Learning impact:
-[Did AI help or hinder your learning? Both?]
-
-What Computational Methods Revealed
-[Core reflection: what's different about DH?]
-
-Scale:
-[Did distant reading reveal patterns invisible to close reading?]
-
-Visualization:
-[Did visualizations prompt new questions?]
-
-Replicability:
-[How does computational work differ from traditional historical methods?]
-
-Limitations:
-[What can't computational methods tell you?]
-
-What You Would Do Differently
-[If you started over, what would you change?]
-
-Methodological changes:
-[Different tools? Different approaches?]
-
-Scope adjustments:
-[Too ambitious? Not ambitious enough?]
-
-Time management:
-[Different workflow?]
-
-Learning strategy:
-[What would you learn first?]
-
-Digital History as a Practice
-[Broader reflections on DH]
-
-What is digital history?
-[How has your understanding evolved?]
-
-Value of DH:
-[What can DH contribute to historical scholarship?]
-
-Critiques:
-[What concerns do you have about digital methods?]
-
-Your place in DH:
-[Will you continue using these methods?]
-
-Impact on Your Research and Career
-[Connect to your bigger picture]
-
-Research applications:
-[How might you use these skills in your dissertation/thesis?]
-
-Career relevance:
-[How do these skills fit your career goals?]
-
-Transferable skills:
-[What skills transcend this particular project?]
-
-Conclusion
-[Synthesize your reflection. What's your main takeaway from this semester?]
-
-Grading Criteria
-This essay is worth 15% of your project grade. It will be evaluated on:
-
-Critical self-reflection (40%) - Honest, thoughtful analysis of your work
-Methodological understanding (30%) - Demonstrates grasp of DH concepts
-Writing quality (20%) - Clear, organized, well-written
-Depth of engagement (10%) - Goes beyond surface description
-Important: This is NOT a summary of your project. It's a critical reflection on your methodology, process, and learning.
+Before this course, I thought of digital history primarily as a way to present information online. Now, I understand it as a methodological approach that can shape the questions we ask and the answers we find. Digital tools are not just about presentation. Instead they are analytical tools that can reveal new patterns, relationships, and insights. At the same time, I have become more aware of the limitations and challenges of digital history. Issues such as data bias, source availability, and the risk of oversimplification are important considerations. Digital methods require careful interpretation and should be used in combination with traditional historical approaches. I do see myself continuing to use digital methods in the future, particularly mapping and visualization. These tools offer valuable ways to explore and communicate complex historical information, especially in ways that are accessible to broader audiences. This is particularly important for public history, which is an area I am interested in pursuing. This project has given me practical skills that I can apply to future research, including data organization, web development, and digital visualization. These skills are valuable not only in academic contexts but also in public history and other professional fields. More broadly, the project has changed the way I think about historical research. It has shown me that history can be both analytical and creative, combining rigorous research with innovative forms of presentation. Overall, this project was both challenging and rewarding. It pushed me to develop new technical skills while also deepening my understanding of historical complexity. The biggest takeaway for me is that digital methods can open up new ways of seeing the past, but they require careful thought and critical engagement. More than anything, this experience has shown me that digital history is not just about tools but asking better questions and finding new ways to answer them.
