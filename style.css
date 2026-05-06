@@ -40,7 +40,7 @@ body {
 
 h1, h2, h3 {
   font-family: "Playfair Display", serif;
-  margin: 0 0 var(--space-sm) 0;
+  margin: 0 0 16px 0;
   letter-spacing: 0.2px;
 }
 
@@ -54,7 +54,7 @@ h3 {
 
 p {
   font-size: 1.1rem;
-  margin-bottom: var(--space-sm);
+  margin-bottom: 16px;
   color: var(--text);
 }
 
@@ -62,13 +62,17 @@ p {
    LAYOUT SYSTEM
 ========================= */
 .container {
-  max-width: 1150px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
 .section {
-  padding: var(--space-xl) 0;
+  padding: var(--space-lg) 0;
+}
+
+.section + .section {
+  padding-top: var(--space-lg);
 }
 
 .section.light {
